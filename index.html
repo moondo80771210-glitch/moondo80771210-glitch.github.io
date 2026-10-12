@@ -88,13 +88,56 @@ textarea.memo-input:focus{outline:2px solid #86b9ff80}
 .game-link{display:inline-block;color:var(--accent);font-size:13px;margin-top:15px;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:780px){.dashboard,.memo-layout{grid-template-columns:1fr}}
 @media(max-width:530px){.dash-card{padding:20px}.cal-day{min-height:36px}}
+
+/* v7 compact top-right side panel */
+.hero{grid-template-columns:minmax(0,1.3fr) minmax(310px,.75fr);gap:38px;min-height:570px;padding:65px 0 60px;align-items:center}
+.hero-side{width:100%;max-width:390px;justify-self:end;border:1px solid #8fbaff45;background:linear-gradient(145deg,#182943ef,#0d182beb);border-radius:22px;box-shadow:0 22px 70px #0005;overflow:hidden;min-width:0}
+.side-tabs{display:flex;padding:10px;gap:6px;border-bottom:1px solid var(--line)}
+.side-tab{flex:1;border:0;background:transparent;color:var(--muted);border-radius:10px;padding:8px 5px;font-size:12px;font-weight:700}
+.side-tab.active{color:#0a1830;background:#92bdff}
+.side-slider{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth;overscroll-behavior-x:contain}
+.side-slider::-webkit-scrollbar{display:none}
+.side-slide{flex:0 0 100%;width:100%;scroll-snap-align:start;padding:17px 20px;min-width:0}
+.side-clock{border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:13px}
+.hero-side .clock-face{font-size:36px;letter-spacing:-.055em;margin:4px 0 0}
+.hero-side .clock-date{font-size:12px}
+.hero-side .calendar-header{margin-bottom:8px}.hero-side .calendar-header strong{font-size:15px}
+.hero-side .smallbtn{padding:4px 9px;font-size:12px}
+.hero-side .cal-grid{gap:2px}.hero-side .cal-weekday{font-size:10px;padding:3px 0}.hero-side .cal-day{min-height:29px;font-size:11px;border-radius:7px}
+.hero-side .cal-help{margin:7px 0 0;font-size:10px}.side-hint{text-align:center;color:#91a5c8;font-size:10px;padding:0 8px 10px}
+.horror-title{font-size:19px;margin:7px 0 11px}.horror-story{background:#0a1425;border:1px solid #ffffff20;border-radius:12px;padding:13px;min-height:145px}
+.horror-story strong{font-size:14px;color:#e7c1c7}.horror-story p{font-size:12px;line-height:1.7;color:#c9d5e8;white-space:pre-line;margin:7px 0 0}
+.horror-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:10px 0 15px}.horror-actions span{font-size:11px;color:var(--muted)}
+.horror-video{border-top:1px solid var(--line);padding-top:12px}.horror-video p{font-size:11px;color:var(--muted);margin:5px 0 10px}
+.horror-link{display:block;border:1px solid #8fbaff35;border-radius:8px;padding:7px 9px;margin:5px 0;font-size:12px;color:#d4e6ff;background:#ffffff08}.horror-link:hover{background:#ffffff18}
+.horror-video small{display:block;color:#90a1bf;font-size:10px;line-height:1.5;margin-top:9px}
+@media(max-width:900px){.links{gap:13px;font-size:11px}.hero{gap:18px}}
+@media(max-width:780px){.hero{grid-template-columns:1fr;gap:28px;padding:50px 0 25px}.hero-side{justify-self:center;max-width:440px;width:100%}}
+
+/* v8: a separate horizontal horror world, not a sidebar tab */
+.hero-side .side-slider{display:block;overflow:visible}.hero-side .side-slide{width:100%;padding:17px 20px}
+.horror-world{position:fixed;z-index:110;inset:0;overflow-y:auto;background:radial-gradient(ellipse at 75% 10%,#4a152345,transparent 45%),radial-gradient(ellipse at 10% 90%,#20284a55,transparent 60%),#090a13;color:#e9e4e8;transform:translateX(102%);visibility:hidden;transition:transform .62s cubic-bezier(.2,.75,.25,1),visibility 0s .62s}
+body.horror-open .horror-world{transform:translateX(0);visibility:visible;transition:transform .62s cubic-bezier(.2,.75,.25,1),visibility 0s}
+body.horror-open{overflow:hidden}.horror-world-inner{width:min(1080px,calc(100% - 44px));margin:auto;min-height:100vh;display:flex;flex-direction:column}
+.horror-top{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid #ffffff20}
+.horror-heading{padding:clamp(32px,7vw,80px) 0 35px}.horror-heading h2{font-size:clamp(42px,9vw,100px);letter-spacing:-.07em;line-height:1.1;margin:12px 0;color:#f2e6e8}.horror-heading h2 span{color:#b34f67}
+.horror-heading p,.horror-desc{color:#bcb2bd;font-size:14px;line-height:1.8}
+.horror-world-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:22px}.horror-feature{padding:25px;background:#15121dcf;border:1px solid #ffffff22;border-radius:20px;box-shadow:0 15px 50px #0004}
+.horror-world .horror-story{min-height:220px;background:#0c0a12}.horror-world .horror-story p{font-size:15px;line-height:1.95}
+.horror-world .horror-link{padding:13px;margin:11px 0;border-color:#ffffff22;background:#ffffff07}
+.horror-world small{font-size:12px;color:#aaa2b2;line-height:1.7}.horror-bottom{margin-top:auto;padding:38px 0 24px;color:#958996;font-size:11px;letter-spacing:.14em}
+#horror-edge{position:fixed;z-index:55;right:0;top:43%;display:flex;align-items:center;gap:9px;writing-mode:vertical-rl;padding:16px 8px;background:#351b35ee;color:#f0dbe4;border:1px solid #a15c7777;border-right:0;border-radius:12px 0 0 12px;font-size:13px;letter-spacing:.1em;cursor:pointer;box-shadow:0 0 24px #a44d532a}
+body.horror-open #horror-edge{display:none}
+@media(max-width:760px){.horror-world-grid{grid-template-columns:1fr}.horror-world-inner{width:calc(100% - 28px)}.horror-feature{padding:17px}.horror-heading{padding:30px 0 20px}#horror-edge{top:48%}}
+@media(prefers-reduced-motion:reduce){.horror-world{transition:none!important}}
 </style></head>
 <body><div class="sky" aria-hidden="true"></div>
 <nav><div class="container navinner"><a href="#home" class="logo">MOONDO<span>8077</span><span style="color:#ffbb9e">.</span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">☰ 메뉴</button>
-<div class="links" id="navlinks"><a href="#about">ABOUT</a><a href="#dashboard">TIME</a><a href="#games">GAMES</a><a href="#memo">MEMO</a><a href="#interests">INTERESTS</a><a href="#journey">JOURNEY</a><a href="#note">NOTE</a><a href="#connect">CONNECT</a></div></div></nav>
+<div class="links" id="navlinks"><a href="#about">ABOUT</a><a href="#dashboard">TIME</a><a href="#horror-world" id="horror-nav">HORROR ↗</a><a href="#games">GAMES</a><a href="#memo">MEMO</a><a href="#interests">INTERESTS</a><a href="#journey">JOURNEY</a><a href="#note">NOTE</a><a href="#connect">CONNECT</a></div></div></nav>
 <main>
-<div class="container"><header class="hero" id="home"><div><div class="eyebrow">Personal space / since 2026</div><h1>Between<br><em>Night & Dawn.</em></h1><p class="lead">새벽과 아침 사이, 나만의 속도로.<br>게임을 좋아하고, 기술을 배우고, 새로운 가능성을 탐색하는 사람.<br>여기는 <strong>MOONDO8077</strong>의 작은 공간이야.</p><div class="cta"><a class="btn" href="#about">나에 대해 알아보기 ↗</a><a class="btn ghost" href="#note">짧은 기록 읽기 ↓</a></div></div><div class="orb-wrap"><div class="orb" role="img" aria-label="새벽 하늘의 푸른 행성 일러스트"></div></div></header><div class="scrollnote">SCROLL TO EXPLORE ↓</div></div>
+<div class="container"><header class="hero" id="home"><div><div class="eyebrow">Personal space / since 2026</div><h1>Between<br><em>Night & Dawn.</em></h1><p class="lead">새벽과 아침 사이, 나만의 속도로.<br>게임을 좋아하고, 기술을 배우고, 새로운 가능성을 탐색하는 사람.<br>여기는 <strong>MOONDO8077</strong>의 작은 공간이야.</p><div class="cta"><a class="btn" href="#about">나에 대해 알아보기 ↗</a><a class="btn ghost" href="#note">짧은 기록 읽기 ↓</a></div></div><aside id="dashboard" class="hero-side" aria-label="실시간 시계와 달력"><div class="side-slider"><div class="side-slide"><div class="side-clock"><div class="mini">SEOUL / KST</div><div class="clock-face" id="live-clock">--:--:--</div><div class="clock-date" id="live-date">시간 불러오는 중…</div></div><div class="side-calendar"><div class="calendar-header"><strong id="calendar-title">캘린더</strong><div class="cal-controls"><button type="button" class="smallbtn" id="cal-prev" aria-label="이전 달">‹</button><button type="button" class="smallbtn" id="cal-today">오늘</button><button type="button" class="smallbtn" id="cal-next" aria-label="다음 달">›</button></div></div><div class="cal-grid" id="calendar-grid" aria-label="월별 달력"></div><p class="cal-help">날짜를 누르면 아래 메모장과 연결돼.</p></div></div>
+</div><div class="side-hint">◷ 실시간 시계 · 날짜별 메모 캘린더</div></aside></header><div class="scrollnote">SCROLL TO EXPLORE ↓</div></div>
 <section id="about"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">01 / About</div><h2>어떤 사람인가요?</h2></div><div class="section-sub">하나의 단어로 정의하기 어려운 사람.</div></div>
 <div class="about"><article class="card reveal"><div class="mini">A SHORT INTRODUCTION</div><p class="quote">“아직 정답은 없지만,<br>궁금한 건 많아.”</p><p>익숙한 것에서 재미를 찾고, 낯선 것에서는 새로운 가능성을 발견하려 해. 빠른 답보다 오래 생각할 만한 질문을 좋아하는 편.</p><div class="chips"><span class="chip">#MOONDO8077</span><span class="chip">#새벽감성</span><span class="chip">#게임</span><span class="chip">#AI</span></div></article>
 <article class="card reveal"><div class="mini">A FEW THINGS ABOUT ME</div><div class="list-row"><span class="num">01</span><div><strong>게임을 즐기는 사람</strong><small>전술, 생존, 액션. 깊게 파고들 수 있는 세계를 좋아해.</small></div></div><div class="list-row"><span class="num">02</span><div><strong>새로운 기술을 배우는 사람</strong><small>AI, 웹, 인터랙션처럼 아이디어를 현실로 만드는 도구에 관심이 있어.</small></div></div><div class="list-row"><span class="num">03</span><div><strong>이야기를 좋아하는 사람</strong><small>게임 속 세계관과 인물의 선택, 철학적인 질문을 오래 곱씹어.</small></div></div><div class="list-row"><span class="num">04</span><div><strong>창작을 시도하는 사람</strong><small>영상 편집, 가상 아바타, 디지털 콘텐츠를 하나씩 탐색 중이야.</small></div></div></article></div></div></section>
@@ -105,12 +148,7 @@ textarea.memo-input:focus{outline:2px solid #86b9ff80}
 <section id="note"><div class="container"><div class="note reveal"><div class="eyebrow">04 / A Note To Myself</div><h2>아직 쓰는 중인 이야기</h2><p>어떤 날은 앞이 선명하고, 어떤 날은 아무것도 보이지 않는다. 그래도 좋아하는 것을 하나씩 알아가고, 어제는 몰랐던 것을 오늘 배우는 일이 쌓이면 언젠가는 나만의 방향이 만들어지겠지.</p><div style="color:#bdd1ed;font-size:13px;margin-top:25px">— MOONDO8077</div></div></div></section>
 <section id="connect"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">05 / Connect</div><h2>다른 곳에서도 만나기</h2></div><div class="section-sub">게임과 대화가 이어지는 공간.</div></div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))"><a class="card reveal" href="https://steamcommunity.com/id/victor1210/" target="_blank" rel="noopener noreferrer" aria-label="Steam 프로필 새 창에서 열기"><div class="ico brand-ico"><svg width="38" height="38" viewBox="0 0 48 48" role="img" aria-label="Steam 로고" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" fill="#ffffff"/><path d="M10.5 26.7 18.9 30.2a8.1 8.1 0 0 1 9.4-4.5l5.6-8.1a10 10 0 1 1 3.4 2.3l-5.7 8.2a8.1 8.1 0 0 1-14.7 6.6l-7.9-3.3a4 4 0 1 1 1.5-4.7Z" fill="#101b31"/><circle cx="25.2" cy="33" r="4.1" fill="#fff"/><circle cx="25.2" cy="33" r="2.9" fill="#101b31"/><circle cx="38" cy="12.4" r="6.6" fill="#fff"/><circle cx="38" cy="12.4" r="4.2" fill="#101b31"/></svg></div><h3>Steam ↗</h3><p>게임 라이브러리와 프로필 보기</p><div class="chips"><span class="chip">steamcommunity.com/id/victor1210</span></div></a><a class="card reveal" href="https://discord.com/users/446227814023299092" target="_blank" rel="noopener noreferrer" aria-label="Discord 사용자 프로필 새 창에서 열기"><div class="ico brand-ico"><svg width="40" height="40" viewBox="0 0 48 48" role="img" aria-label="Discord 로고" xmlns="http://www.w3.org/2000/svg"><path fill="#5865F2" d="M9 12.3C14 8.5 18.8 8 18.8 8l.8 2c2.9-.5 5.9-.5 8.8 0l.8-2s4.8.5 9.8 4.3c6.2 9.2 7.9 18.2 7.9 18.2-4.2 3.2-8.3 4.6-8.3 4.6l-1.8-2.9c1.6-.6 3-1.4 4.2-2.3-3.9 2.2-9.4 3.5-16.9 3.5S11 32.1 7.1 29.9c1.2.9 2.6 1.7 4.2 2.3l-1.8 2.9s-4.1-1.4-8.3-4.6c0 0 1.7-9 7.8-18.2Z" transform="translate(0 2) scale(.96)"/><ellipse cx="18.2" cy="24" rx="3" ry="3.6" fill="white"/><ellipse cx="29.8" cy="24" rx="3" ry="3.6" fill="white"/></svg></div><h3>Discord ↗</h3><p>디스코드 프로필 열기</p><div class="chips"><span class="chip">사용자 ID · 446227814023299092</span></div></a></div><p class="section-sub" style="margin-top:17px">디스코드 프로필 링크는 앱 또는 로그인 상태에 따라 표시 방식이 달라질 수 있어.</p></div></section>
 
-<section id="dashboard"><div class="container">
-<div class="section-head reveal"><div><div class="eyebrow">05 / Live Dashboard</div><h2>오늘의 시간</h2></div><div class="section-sub">실시간 시계 · 월별 캘린더</div></div>
-<div class="dashboard">
-<div class="dash-card reveal"><h3>⏱ 지금 이 순간</h3><div class="clock-face" id="live-clock" aria-live="off">--:--:--</div><div class="clock-date" id="live-date">시간 불러오는 중…</div><div class="clock-zone" id="live-zone">Asia/Seoul · KST</div><p class="section-sub" style="margin-top:28px">초 단위로 갱신되는 한국 시간. 방문자의 기기 시간이 기준이야.</p></div>
-<div class="dash-card reveal"><div class="calendar-header"><strong id="calendar-title">캘린더</strong><div class="cal-controls"><button type="button" class="smallbtn" id="cal-prev" aria-label="이전 달">‹</button><button type="button" class="smallbtn" id="cal-today">오늘</button><button type="button" class="smallbtn" id="cal-next" aria-label="다음 달">›</button></div></div><div class="cal-grid" id="calendar-grid" aria-label="월별 달력"></div><p class="cal-help">날짜를 누르면 해당 날짜에 메모를 남길 수 있어.</p></div>
-</div></div></section>
+
 <section id="games"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">06 / Game Profile</div><h2>내 게임 프로필</h2></div><div class="section-sub">자주 즐기고 좋아하는 세계들</div></div>
 <div class="grid">
 <article class="card game-card reveal"><div class="mini">ACTION / HUNTING</div><h3>Monster Hunter</h3><p>태도와 함께 사냥을 떠나는 시간. 전투의 손맛과 몬스터의 생태를 좋아해.</p><div class="chips"><span class="chip">태도</span><span class="chip">액션</span></div></article>
@@ -132,7 +170,14 @@ textarea.memo-input:focus{outline:2px solid #86b9ff80}
 </div><p id="visit-status" class="section-sub" style="margin-top:14px" role="status">방문자 통계 연결 상태를 확인하는 중…</p>
 <p class="section-sub">페이지 방문 기준 집계이며, 고유 인원 수와는 달라. 서버 연결 후 실제 방문자가 모두 공유하는 통계가 표시돼.</p>
 </div></section>
-</main><footer><div class="container foot"><span>© <span id="year"></span> MOONDO8077 · Built for the space between night & dawn.</span><span>Made with curiosity ✦</span></div></footer>
+</main><section id="horror-world" class="horror-world" aria-label="공포 세계" aria-hidden="true">
+<div class="horror-world-inner">
+<div class="horror-top"><span class="mini">MOONDO8077 / THE OTHER SIDE</span><button type="button" class="smallbtn" id="horror-close">← 원래 공간으로</button></div>
+<div class="horror-heading"><div class="eyebrow">BEYOND THE DAWN / 另一 SIDE</div><h2>THE DARK SIDE<span>.</span></h2><p>새벽 너머, 또 다른 세계. 화면을 오른쪽으로 밀면 원래 공간으로 돌아갈 수 있어.</p></div>
+<div class="horror-world-grid"><article class="horror-feature"><div class="mini">MIDNIGHT / HORROR STORIES</div><h3 class="horror-title">새벽의 괴담</h3><div class="horror-story" id="horror-story" aria-live="polite"><strong id="horror-story-title"></strong><p id="horror-story-body"></p></div><div class="horror-actions"><button type="button" class="smallbtn" id="horror-prev">‹ 이전 이야기</button><span id="horror-index">1 / 3</span><button type="button" class="smallbtn" id="horror-next">다음 이야기 ›</button></div></article>
+<article class="horror-feature"><div class="mini">YOUTUBE / MYSTERY</div><h3 class="horror-title">심야의 영상</h3><p class="horror-desc">공포 실화, 괴담, 미스터리. YouTube에서 바로 찾아볼 수 있어.</p><a class="horror-link" href="https://www.youtube.com/results?search_query=%EA%B3%B5%ED%8F%AC+%EA%B4%B4%EB%8B%B4+%EC%8B%A4%ED%99%94" target="_blank" rel="noopener noreferrer">공포 실화 영상 ↗</a><a class="horror-link" href="https://www.youtube.com/results?search_query=%EB%AF%B8%EC%8A%A4%ED%84%B0%EB%A6%AC+%EB%AF%B8%EC%A0%9C%EC%82%AC%EA%B1%B4" target="_blank" rel="noopener noreferrer">미스터리 · 미제사건 ↗</a><a class="horror-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">내 YouTube 홈 열기 ↗</a><small>개인 추천 알고리즘은 공식 API로 직접 불러올 수 없어. 링크는 로그인된 YouTube에서 열려.</small></article></div>
+<div class="horror-bottom">☾ THE NIGHT HAS ANOTHER FACE · MOONDO8077</div></div></section>
+<button type="button" id="horror-edge" aria-label="공포 세계로 이동">☾<span>HORROR</span><span>❯</span></button><footer><div class="container foot"><span>© <span id="year"></span> MOONDO8077 · Built for the space between night & dawn.</span><span>Made with curiosity ✦</span></div></footer>
 <button id="top" aria-label="맨 위로 이동">↑</button>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
@@ -202,5 +247,28 @@ async function showVisitors(){
   }catch(e){status.textContent="방문 통계를 불러올 수 없어. 서버 주소와 배포 상태를 확인해줘."}
 }
 showVisitors();
+})();
+
+(function(){
+ const page=document.getElementById('horror-world');
+ const open=()=>{document.body.classList.add('horror-open');page.setAttribute('aria-hidden','false')};
+ const close=()=>{document.body.classList.remove('horror-open');page.setAttribute('aria-hidden','true')};
+ document.getElementById('horror-edge').addEventListener('click',open);
+ document.getElementById('horror-close').addEventListener('click',close);
+ document.getElementById('horror-nav').addEventListener('click',e=>{e.preventDefault();open()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('horror-open'))close()});
+ let touchX=0,touchY=0;
+ document.addEventListener('touchstart',e=>{if(e.touches.length!==1)return;touchX=e.touches[0].clientX;touchY=e.touches[0].clientY},{passive:true});
+ document.addEventListener('touchend',e=>{if(!touchX||!e.changedTouches.length)return;const dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;touchX=0;if(Math.abs(dx)<110||Math.abs(dx)<Math.abs(dy)*1.6)return;if(document.body.classList.contains('horror-open')&&dx>0)close();else if(!document.body.classList.contains('horror-open')&&dx<0)open()},{passive:true});
+ const stories=[
+  ['새벽 3시의 초인종','새벽 세 시, 초인종이 울렸다. 인터폰에는 아무도 없었다.\n그때 휴대폰으로 문자가 도착했다.\n“밖에 있는 건 내가 아니야. 절대 열지 마.”\n발신자는… 내 번호였다.'],
+  ['마지막 층','엘리베이터가 13층에서 멈췄다. 우리 아파트는 12층까지다.\n문이 열리자 복도 끝에 누군가 서 있었다.\n“드디어 돌아왔네.”\n나는 처음 보는 얼굴이었다.'],
+  ['녹음된 목소리','혼자 사는 방에서 잠든 사이 녹음 앱이 켜져 있었다.\n재생하자 내 목소리가 들렸다.\n“지금 자고 있어.”\n잠시 뒤 낯선 목소리가 대답했다.\n“알아. 나도 보고 있어.”']
+ ];
+ let current=0;
+ function showStory(){document.getElementById('horror-story-title').textContent=stories[current][0];document.getElementById('horror-story-body').textContent=stories[current][1];document.getElementById('horror-index').textContent=(current+1)+' / '+stories.length}
+ document.getElementById('horror-prev').addEventListener('click',()=>{current=(current+stories.length-1)%stories.length;showStory()});
+ document.getElementById('horror-next').addEventListener('click',()=>{current=(current+1)%stories.length;showStory()});
+ showStory();
 })();
 </script></body></html>
