@@ -125,8 +125,13 @@ textarea.memo-input:focus{outline:2px solid #86b9ff80}
 <div class="dash-card reveal"><h3 id="memo-date-title">오늘의 메모</h3><label for="memo-text" class="section-sub">선택한 날짜의 메모</label><textarea id="memo-text" class="memo-input" maxlength="5000" placeholder="오늘의 생각, 할 일, 기억하고 싶은 문장을 남겨봐."></textarea><div class="memo-actions"><button class="btn" type="button" id="memo-save">메모 저장</button><button class="btn ghost" type="button" id="memo-delete">선택 날짜 삭제</button></div><div class="memo-status" id="memo-status" role="status"></div><p class="section-sub">이 메모는 이 기기에만 저장돼. 다른 사람이나 다른 기기에서는 보이지 않아. 브라우저 데이터를 삭제하면 사라질 수 있어.</p></div>
 <div class="dash-card reveal"><h3>📒 저장된 기록</h3><div id="memo-list" class="memo-list"></div><div class="memo-actions"><button type="button" class="smallbtn" id="memo-export">메모 백업 (.json)</button><label class="smallbtn" for="memo-import" style="cursor:pointer">백업 불러오기</label><input type="file" id="memo-import" accept="application/json,.json" hidden></div></div>
 </div></div></section>
-<section id="visits"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">08 / Visits</div><h2>방문 기록</h2></div></div>
-<div class="dash-card reveal"><div class="mini">THIS BROWSER / LOCAL VISITS</div><div class="visit-num" id="visit-count">—</div><p class="section-sub">이 브라우저에서 홈페이지를 연 횟수야. 전체 방문자 수가 아닌 <strong>로컬 방문 횟수</strong>야. 전체 방문자 통계는 별도의 분석 서비스 연결이 필요해.</p></div></div></section>
+<section id="visits"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">08 / Visitors</div><h2>방문자 기록</h2></div><div class="section-sub">전체 방문과 오늘 방문을 한눈에</div></div>
+<div class="dashboard">
+<div class="dash-card reveal"><div class="mini">TOTAL / ALL TIME</div><div class="visit-num" id="visit-total">—</div><p class="section-sub">누적 방문 횟수</p></div>
+<div class="dash-card reveal"><div class="mini">TODAY / KST</div><div class="visit-num" id="visit-today">—</div><p class="section-sub">오늘 방문 횟수 · 한국 시간 기준</p></div>
+</div><p id="visit-status" class="section-sub" style="margin-top:14px" role="status">방문자 통계 연결 상태를 확인하는 중…</p>
+<p class="section-sub">페이지 방문 기준 집계이며, 고유 인원 수와는 달라. 서버 연결 후 실제 방문자가 모두 공유하는 통계가 표시돼.</p>
+</div></section>
 </main><footer><div class="container foot"><span>© <span id="year"></span> MOONDO8077 · Built for the space between night & dawn.</span><span>Made with curiosity ✦</span></div></footer>
 <button id="top" aria-label="맨 위로 이동">↑</button>
 <script>
@@ -178,6 +183,24 @@ $("memo-delete").onclick=()=>{if(!notes[selected])return;if(!confirm(selected+" 
 $("memo-export").onclick=()=>{const blob=new Blob([JSON.stringify({version:1,notes},null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="moondo8077_memos_backup.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 $("memo-import").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>1000000)throw Error("파일이 너무 커.");const data=JSON.parse(await f.text());if(!data||data.version!==1||typeof data.notes!=="object"||Array.isArray(data.notes))throw Error("백업 형식이 달라.");const cleaned={};for(const [key,value] of Object.entries(data.notes)){if(/^\d{4}-\d{2}-\d{2}$/.test(key)&&typeof value==="string")cleaned[key]=value.slice(0,5000)}if(!confirm("백업 메모를 현재 메모와 합칠까? 같은 날짜는 백업 내용으로 바뀌어."))return;notes={...notes,...cleaned};safeSet(storeKey,JSON.stringify(notes));renderCal();renderEditor();$("memo-status").textContent="백업 불러오기 완료"}catch(err){$("memo-status").textContent="불러오기 실패: "+err.message}finally{e.target.value=""}};
 renderCal();renderEditor();
-const visits=Number(safeGet("moondo8077_local_visits","0"));const next=Number.isFinite(visits)&&visits>=0?Math.floor(visits)+1:1;$("visit-count").textContent=next.toLocaleString("ko-KR");safeSet("moondo8077_local_visits",String(next));
+// Cloudflare Worker URL after deployment. Never place an API secret in this public HTML.
+const VISITOR_API_URL = ""; // e.g. "https://moondo8077-visitors.your-subdomain.workers.dev"
+async function showVisitors(){
+  const status=$("visit-status");
+  if(!VISITOR_API_URL){status.textContent="실제 방문자 통계는 아직 연결되지 않았어. 제공된 Cloudflare Worker를 배포하고 주소를 설정해줘.";return}
+  try{
+    const key="moondo8077_visit_session_v1", recorded=sessionStorage.getItem(key)==="yes";
+    const url=VISITOR_API_URL.replace(/\/$/,"")+(recorded?"/stats":"/visit");
+    const response=await fetch(url,{method:recorded?"GET":"POST",cache:"no-store"});
+    if(!response.ok)throw Error("HTTP "+response.status);
+    const result=await response.json();
+    if(!Number.isFinite(result.total)||!Number.isFinite(result.today))throw Error("잘못된 응답");
+    $("visit-total").textContent=result.total.toLocaleString("ko-KR");
+    $("visit-today").textContent=result.today.toLocaleString("ko-KR");
+    if(!recorded)sessionStorage.setItem(key,"yes");
+    status.textContent="실제 공유 방문 통계 · 오늘 기준: "+result.date+" (KST) · 한 탭 세션에서 한 번 집계";
+  }catch(e){status.textContent="방문 통계를 불러올 수 없어. 서버 주소와 배포 상태를 확인해줘."}
+}
+showVisitors();
 })();
 </script></body></html>
