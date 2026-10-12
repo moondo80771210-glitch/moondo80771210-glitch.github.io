@@ -184,7 +184,7 @@ $("memo-export").onclick=()=>{const blob=new Blob([JSON.stringify({version:1,not
 $("memo-import").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>1000000)throw Error("파일이 너무 커.");const data=JSON.parse(await f.text());if(!data||data.version!==1||typeof data.notes!=="object"||Array.isArray(data.notes))throw Error("백업 형식이 달라.");const cleaned={};for(const [key,value] of Object.entries(data.notes)){if(/^\d{4}-\d{2}-\d{2}$/.test(key)&&typeof value==="string")cleaned[key]=value.slice(0,5000)}if(!confirm("백업 메모를 현재 메모와 합칠까? 같은 날짜는 백업 내용으로 바뀌어."))return;notes={...notes,...cleaned};safeSet(storeKey,JSON.stringify(notes));renderCal();renderEditor();$("memo-status").textContent="백업 불러오기 완료"}catch(err){$("memo-status").textContent="불러오기 실패: "+err.message}finally{e.target.value=""}};
 renderCal();renderEditor();
 // Cloudflare Worker URL after deployment. Never place an API secret in this public HTML.
-const VISITOR_API_URL = ""; // e.g. "https://moondo8077-visitors.your-subdomain.workers.dev"
+const VISITOR_API_URL = "https://moondo8077-visitors.moondo80771210-56c.workers.dev"; // e.g. "https://moondo8077-visitors.your-subdomain.workers.dev"
 async function showVisitors(){
   const status=$("visit-status");
   if(!VISITOR_API_URL){status.textContent="실제 방문자 통계는 아직 연결되지 않았어. 제공된 Cloudflare Worker를 배포하고 주소를 설정해줘.";return}
