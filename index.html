@@ -156,11 +156,22 @@ body.music-open #horror-edge{display:none}
 @media(prefers-reduced-motion:reduce){.music-world{transition:none!important}}
 
 .music-cover{display:flex;align-items:center;gap:16px;margin:16px 0 4px;padding:12px;border-radius:12px;background:#ffffff08;border:1px solid #ffffff18}.music-cover img{width:100px;height:72px;object-fit:cover;border-radius:8px}.music-cover span{display:grid;place-items:center;width:100px;height:72px;font-size:38px;background:#22365a;border-radius:8px}.music-cover div{min-width:0;flex:1}.music-cover strong{display:block;font-size:13px;overflow-wrap:anywhere}.music-cover small{display:block;color:#9fb5d8;font-size:11px;margin-top:7px}.music-search{border-top:1px solid #ffffff22;margin-top:20px;padding-top:16px}.music-search-results{display:grid;gap:8px;margin-top:12px;max-height:310px;overflow:auto}.music-result{display:flex;align-items:center;gap:10px;padding:8px;background:#ffffff09;border:1px solid #ffffff1d;border-radius:10px}.music-result img,.music-track img{width:72px;height:48px;object-fit:cover;border-radius:7px;flex-shrink:0}.music-result-info{flex:1;min-width:0;font-size:12px;overflow-wrap:anywhere}.music-result-info small{display:block}.music-share{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.music-import-label{cursor:pointer;display:inline-flex;align-items:center}.music-track img{width:56px;height:40px}
+
+.myoya-world{position:fixed;z-index:120;inset:0;overflow-y:auto;background:radial-gradient(ellipse at 55% 0%,#27406955,transparent 58%),radial-gradient(ellipse at 12% 82%,#49324b45,transparent 48%),#080b18;color:#e6edfa;transform:translateY(102%);visibility:hidden;transition:transform .6s cubic-bezier(.2,.75,.25,1),visibility 0s .6s}
+body.myoya-open .myoya-world{transform:translateY(0);visibility:visible;transition:transform .6s cubic-bezier(.2,.75,.25,1),visibility 0s}body.myoya-open{overflow:hidden}
+.myoya-inner{width:min(1040px,calc(100% - 36px));min-height:100vh;margin:auto;display:flex;flex-direction:column}
+.myoya-top{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid #ffffff22}
+.myoya-hero{padding:clamp(45px,9vw,110px) 0 55px;text-align:center}.myoya-hero h2{font-size:clamp(34px,6vw,68px);font-weight:500;letter-spacing:-.055em;margin:20px 0}.myoya-hero p{color:#bdc8df}
+.myoya-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}.myoya-card{border:1px solid #9ab8e92b;background:#111627cb;border-radius:20px;padding:26px;min-width:0}.myoya-card h3{font-size:21px;margin:14px 0 20px}.myoya-card p{color:#b8c3d9;line-height:1.85;font-size:14px}.myoya-star{font-size:80px;color:#b2c9f5;text-align:center;margin:55px auto;filter:drop-shadow(0 0 34px #94b7ff88)}
+.myoya-label{display:block;margin:16px 0 8px;font-size:13px;color:#cbdaf2}.myoya-card textarea{display:block;width:100%;min-height:170px;resize:vertical;border-radius:12px;background:#080d1b;border:1px solid #a6c0e449;padding:14px;color:#f0f4ff;font:inherit;line-height:1.8}
+.myoya-actions{display:flex;gap:9px;margin-top:12px;flex-wrap:wrap}.myoya-status{min-height:19px;margin:10px 0!important;font-size:12px!important}.myoya-letters{display:grid;gap:10px;max-height:320px;overflow:auto;margin:18px 0}.myoya-entry{border:1px solid #ffffff20;border-radius:12px;padding:13px;background:#ffffff07}.myoya-entry time{font-size:11px;color:#aabfe2}.myoya-entry p{white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0}.myoya-entry button{margin-top:7px}.myoya-card small{color:#9baecc;font-size:12px}.myoya-bottom{margin-top:auto;padding:40px 0 24px;text-align:center;color:#8b9dbb;font-size:11px;letter-spacing:.12em}
+@media(max-width:740px){.myoya-grid{grid-template-columns:1fr}.myoya-card{padding:18px}}
+@media(prefers-reduced-motion:reduce){.myoya-world{transition:none!important}}
 </style></head>
 <body><div class="sky" aria-hidden="true"></div>
 <nav><div class="container navinner"><a href="#home" class="logo">MOONDO<span>8077</span><span style="color:#ffbb9e">.</span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">☰ 메뉴</button>
-<div class="links" id="navlinks"><a href="#about">ABOUT</a><a href="#dashboard">TIME</a><a href="#music-world" id="music-nav">MUSIC ♫</a><a href="#horror-world" id="horror-nav">HORROR ↗</a><a href="#games">GAMES</a><a href="#memo">MEMO</a><a href="#interests">INTERESTS</a><a href="#journey">JOURNEY</a><a href="#note">NOTE</a><a href="#connect">CONNECT</a></div></div></nav>
+<div class="links" id="navlinks"><a href="#about">ABOUT</a><a href="#dashboard">TIME</a><a href="#myoya-world" id="myoya-nav">MYOYA ✦</a><a href="#music-world" id="music-nav">MUSIC ♫</a><a href="#horror-world" id="horror-nav">HORROR ↗</a><a href="#games">GAMES</a><a href="#memo">MEMO</a><a href="#interests">INTERESTS</a><a href="#journey">JOURNEY</a><a href="#note">NOTE</a><a href="#connect">CONNECT</a></div></div></nav>
 <main>
 <div class="container"><header class="hero" id="home"><div><div class="eyebrow">Personal space / since 2026</div><h1>Between<br><em>Night & Dawn.</em></h1><p class="lead">새벽과 아침 사이, 나만의 속도로.<br>게임을 좋아하고, 기술을 배우고, 새로운 가능성을 탐색하는 사람.<br>여기는 <strong>MOONDO8077</strong>의 작은 공간이야.</p><div class="cta"><a class="btn" href="#about">나에 대해 알아보기 ↗</a><a class="btn ghost" href="#note">짧은 기록 읽기 ↓</a></div></div><aside id="dashboard" class="hero-side" aria-label="실시간 시계와 달력"><div class="side-slider"><div class="side-slide"><div class="side-clock"><div class="mini">SEOUL / KST</div><div class="clock-face" id="live-clock">--:--:--</div><div class="clock-date" id="live-date">시간 불러오는 중…</div></div><div class="side-calendar"><div class="calendar-header"><strong id="calendar-title">캘린더</strong><div class="cal-controls"><button type="button" class="smallbtn" id="cal-prev" aria-label="이전 달">‹</button><button type="button" class="smallbtn" id="cal-today">오늘</button><button type="button" class="smallbtn" id="cal-next" aria-label="다음 달">›</button></div></div><div class="cal-grid" id="calendar-grid" aria-label="월별 달력"></div><p class="cal-help">날짜를 누르면 아래 메모장과 연결돼.</p></div></div>
 </div><div class="side-hint">◷ 실시간 시계 · 날짜별 메모 캘린더</div></aside></header><div class="scrollnote">SCROLL TO EXPLORE ↓</div></div>
@@ -196,7 +207,18 @@ body.music-open #horror-edge{display:none}
 </div><p id="visit-status" class="section-sub" style="margin-top:14px" role="status">방문자 통계 연결 상태를 확인하는 중…</p>
 <p class="section-sub">페이지 방문 기준 집계이며, 고유 인원 수와는 달라. 서버 연결 후 실제 방문자가 모두 공유하는 통계가 표시돼.</p>
 </div></section>
-</main><section id="music-world" class="music-world" aria-label="음악 감상 공간" aria-hidden="true">
+</main><section id="myoya-world" class="myoya-world" aria-label="묘야님을 기억하는 공간" aria-hidden="true">
+<div class="myoya-inner">
+<div class="myoya-top"><span class="mini">A STAR IN MY NIGHT SKY</span><button type="button" class="smallbtn" id="myoya-close">← 메인으로</button></div>
+<div class="myoya-hero"><span class="mini">FOR MYOYA</span><h2>언제나, 나의 별.</h2><p>묘야님을 기억하는 작은 공간.</p></div>
+<div class="myoya-grid">
+<article class="myoya-card"><div class="mini">A QUIET PLACE</div><h3>기억의 자리</h3><p>어떤 목소리와 웃음은 시간이 지나도 마음속에 남아 있어.</p><p>그리운 날에는 이곳에 잠시 머물러도 좋아.</p><div class="myoya-star" aria-hidden="true">✦</div></article>
+<article class="myoya-card"><div class="mini">LETTERS / PRIVATE ON THIS DEVICE</div><h3>묘야님께 쓰는 편지</h3><p>이곳에 남긴 글은 이 브라우저에만 저장돼. 사이트 방문자에게 공개되지 않아.</p>
+<label class="myoya-label" for="myoya-letter">오늘의 이야기</label><textarea id="myoya-letter" rows="7" placeholder="묘야님, 오늘은 말이야..."></textarea>
+<div class="myoya-actions"><button type="button" class="smallbtn" id="myoya-save">편지 저장</button><button type="button" class="smallbtn" id="myoya-export">편지 백업</button></div><p id="myoya-status" aria-live="polite" class="myoya-status"></p>
+<div id="myoya-letters" class="myoya-letters"></div><small>브라우저 데이터를 지우면 편지도 사라질 수 있어. 소중한 편지는 백업해줘.</small>
+</article></div>
+<div class="myoya-bottom">FOR THE MEMORIES THAT STAY · MOONDO8077</div></div></section><section id="music-world" class="music-world" aria-label="음악 감상 공간" aria-hidden="true">
 <div class="music-inner">
 <div class="music-top"><span class="mini">MOONDO8077 / SOUND OF DAWN</span><button type="button" class="smallbtn" id="music-close">← 메인으로</button></div>
 <div class="music-hero"><div class="eyebrow">A LITTLE MUSIC FOR THE NIGHT</div><h2>SOUND OF DAWN<span>♫</span></h2><p>좋아하는 노래를 모아 듣는 나만의 음악 공간.</p></div>
@@ -356,5 +378,20 @@ showVisitors();
  if(location.hash.startsWith('#music=')){try{const imported=decode(location.hash.slice(7));if(Array.isArray(imported)){const good=imported.filter(valid).slice(0,30).map(t=>({id:t.id,title:String(t.title||'YouTube 음악').slice(0,120)}));if(good.length&&confirm('공유받은 플레이리스트 '+good.length+'곡을 내 목록에 추가할까?')){for(const t of good)if(!tracks.some(x=>x.id===t.id))tracks.push(t);tracks=tracks.slice(0,100);save()}open();history.replaceState(null,'',location.pathname+location.search)}}catch(e){}}
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('music-open'))close()});
  let x=0,y=0;document.addEventListener('touchstart',e=>{if(e.touches.length===1){x=e.touches[0].clientX;y=e.touches[0].clientY}},{passive:true});document.addEventListener('touchend',e=>{if(!x||!e.changedTouches.length)return;const dx=e.changedTouches[0].clientX-x,dy=e.changedTouches[0].clientY-y;x=0;if(Math.abs(dx)<110||Math.abs(dx)<Math.abs(dy)*1.6)return;if(document.body.classList.contains('music-open')&&dx<0)close();else if(!document.body.classList.contains('music-open')&&!document.body.classList.contains('horror-open')&&dx>0)open()},{passive:true});render();
+})();
+</script><script>
+(function(){
+ const page=document.getElementById('myoya-world'),box=document.getElementById('myoya-letter'),status=document.getElementById('myoya-status'),list=document.getElementById('myoya-letters'),key='moondo8077_myoya_letters_v1';
+ let letters=[];try{const raw=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(raw))letters=raw.filter(x=>x&&typeof x.text==='string'&&typeof x.date==='string').slice(0,200)}catch(e){}
+ const open=()=>{document.body.classList.add('myoya-open');page.setAttribute('aria-hidden','false')};
+ const close=()=>{document.body.classList.remove('myoya-open');page.setAttribute('aria-hidden','true')};
+ document.getElementById('myoya-nav').addEventListener('click',e=>{e.preventDefault();open()});
+ document.getElementById('myoya-close').addEventListener('click',close);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('myoya-open'))close()});
+ function save(){try{localStorage.setItem(key,JSON.stringify(letters));return true}catch(e){status.textContent='저장 공간이 부족하거나 차단돼 있어. 백업 파일로 보관해줘.';return false}}
+ function render(){list.replaceChildren();if(!letters.length){const p=document.createElement('p');p.textContent='아직 저장한 편지가 없어.';list.append(p);return}letters.forEach((item,i)=>{const entry=document.createElement('div');entry.className='myoya-entry';const date=document.createElement('time');date.textContent=item.date;const text=document.createElement('p');text.textContent=item.text;const del=document.createElement('button');del.type='button';del.className='smallbtn';del.textContent='삭제';del.addEventListener('click',()=>{if(!confirm('이 편지를 삭제할까?'))return;letters.splice(i,1);save();render()});entry.append(date,text,del);list.append(entry)})}
+ document.getElementById('myoya-save').addEventListener('click',()=>{const value=box.value.trim();if(!value){status.textContent='편지를 먼저 작성해줘.';return}letters.unshift({date:new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'}),text:value});if(letters.length>200)letters.length=200;if(save()){box.value='';status.textContent='이 기기에 편지를 저장했어.'}render()});
+ document.getElementById('myoya-export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({title:'묘야님께 쓰는 편지',letters},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='myoya_letters_backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);status.textContent='백업 파일을 만들었어.'});
+ render();
 })();
 </script></body></html>
