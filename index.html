@@ -526,11 +526,14 @@ document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,[con
  const realm=document.getElementById('v28-secret-realm');
  const closeBtn=document.getElementById('v28-secret-close');
  let previousFocus=null;
+ let previewMode=false;
+ const previewCode=['m','y','o','y','a'];let previewProgress=0;
  function midnight(){const h=new Date().getHours();return h>=0&&h<4}
- function close(){realm.hidden=true;realm.setAttribute('aria-hidden','true');document.body.classList.remove('v28-realm-open');if(previousFocus&&previousFocus.isConnected)previousFocus.focus()}
- function update(){star.hidden=!midnight();if(!midnight()&&!realm.hidden)close()}
- function open(){if(!midnight())return;previousFocus=document.activeElement;realm.hidden=false;realm.setAttribute('aria-hidden','false');document.body.classList.add('v28-realm-open');closeBtn.focus()}
- star.addEventListener('click',open);
+ function close(){realm.hidden=true;realm.setAttribute('aria-hidden','true');document.body.classList.remove('v28-realm-open');previewMode=false;if(previousFocus&&previousFocus.isConnected)previousFocus.focus()}
+ function update(){star.hidden=!midnight();if(!midnight()&&!realm.hidden&&!previewMode)close()}
+ function open(forcePreview=false){if(!midnight()&&!forcePreview)return;previewMode=forcePreview;previousFocus=document.activeElement;realm.hidden=false;realm.setAttribute('aria-hidden','false');document.body.classList.add('v28-realm-open');closeBtn.focus()}
+ star.addEventListener('click',()=>open(false));
+ document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.repeat||e.target.closest('input,textarea,select,[contenteditable="true"]'))return;if(!realm.hidden)return;const k=e.key.toLowerCase();previewProgress=k===previewCode[previewProgress]?previewProgress+1:k===previewCode[0]?1:0;if(previewProgress===previewCode.length){previewProgress=0;open(true)}});
  closeBtn.addEventListener('click',close);
  document.addEventListener('keydown',e=>{if(realm.hidden)return;if(e.key==='Escape'){e.preventDefault();close()}else if(e.key==='Tab'){e.preventDefault();closeBtn.focus()}});
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()});
