@@ -392,7 +392,22 @@ body.v21-rain #v21-weather-overlay,body.v21-snow #v21-weather-overlay,body.v21-c
 .myoya-playlist-source small{display:block;margin-top:10px;color:#64879b}
 .myoya-playlist-link{display:inline-flex;align-items:center;padding:11px 15px;border-radius:10px;background:#2e6588;color:#fff!important;text-decoration:none;font-size:13px;font-weight:700}
 .myoya-playlist-link:hover{background:#204d6c}
-</style></head>
+</style><style id="v50-myoya-list-style">
+.myoya-v50-tools{display:flex;gap:12px;align-items:center;justify-content:space-between;margin:18px 0 12px}
+#myoya-exhibit-search{min-width:0;flex:1;border:1px solid #abcfe4;border-radius:10px;padding:12px;background:#fff;color:#284c68;font:inherit}
+#myoya-exhibit-count{font-size:12px;color:#6387a0;white-space:nowrap}
+.myoya-exhibit-song-list{display:grid;gap:6px;max-height:580px;overflow-y:auto;padding:3px 4px 3px 0}
+.myoya-v50-track{display:flex;align-items:center;gap:12px;padding:10px;border:1px solid #c8dfe9;border-radius:12px;background:#fff;color:#234c68;text-decoration:none!important;transition:background .18s,transform .18s}
+.myoya-v50-track:hover,.myoya-v50-track:focus-visible{background:#e2f3fc;transform:translateX(2px)}
+.myoya-v50-no{min-width:28px;text-align:center;font-size:12px;color:#6b95b0;font-variant-numeric:tabular-nums}
+.myoya-v50-thumb{flex:0 0 58px;height:45px;display:grid;place-items:center;border-radius:8px;background:linear-gradient(135deg,#bcdcef,#eaf7fd);font-size:25px;color:#5b94b6}
+.myoya-v50-info{flex:1;min-width:0}
+.myoya-v50-info strong{display:block;font-size:13px;line-height:1.45;overflow-wrap:anywhere}
+.myoya-v50-info small{display:block;font-size:11px;color:#7496a9;margin-top:4px}
+.myoya-v50-duration{font-size:11px;color:#6689a0;font-variant-numeric:tabular-nums}
+.myoya-v50-out{font-size:17px;color:#7ea5bc}
+@media(max-width:520px){.myoya-v50-track{gap:7px;padding:8px}.myoya-v50-thumb{flex-basis:43px;height:38px}.myoya-v50-no{min-width:22px}.myoya-v50-tools{flex-wrap:wrap}}
+</style><style id="v52-myoya-thumbnails">.myoya-v50-thumb{overflow:hidden}.myoya-v50-thumb img{width:100%;height:100%;object-fit:cover}.myoya-v52-unverified{opacity:.72}.myoya-v52-unverified .myoya-v50-thumb{background:#e5eaf0;color:#5d6c79}</style></head>
 <body><button type="button" id="v33-mine-tab" aria-label="지뢰찾기 게임 열기" title="지뢰찾기 열기">💣 GAME</button><button id="v27-myoya-star" type="button" hidden aria-label="새벽에 나타난 묘야님의 별" title="새벽에 나타난 별">✧</button><section id="v28-secret-realm" class="v28-secret-realm" aria-label="묘야님을 위한 새벽의 비밀 공간" aria-hidden="true" hidden><div class="v28-realm-inner"><div class="v28-top"><span>✦  THE QUIET HOURS</span><button type="button" id="v28-secret-close" aria-label="비밀 공간 닫기">← 돌아가기</button></div><div class="v28-center"><span class="v28-halo" aria-hidden="true">✧</span><span class="v28-eyebrow">FOR MYOYA</span><h2>고요한 새벽, 작은 별 하나.</h2><p class="v28-lead">오늘도 문득 생각나는 사람이 있습니다.</p><p>그저, 오래도록 기억하고 싶습니다.</p><div class="v28-quote">아무 말 없이 잠시 머물러도 괜찮은 곳.<br>이곳의 작은 별은 묘야님을 기억합니다.</div><div class="v34-audio" id="v34-myoya-audio"><label for="v36-track">묘야님이 듣던 음악</label><select id="v36-track" aria-label="음악 선택"><option value="nSEYgMOcyB8">하얀 나의 오두막집 — 브금대통령</option><option value="_Iuzf93YQo0">In Dream — 브금대통령</option><option value="9wBqKu8W-wI">할아버지의 낡은 시계 오르골 — CEPA MuziKart Rodem</option><option value="e-Xi4nxk7e4">Silent, Christmas Night — 브금대통령</option><option value="XZP4JwZJM5Y">카드캡터체리 OST 피아노 커버 모음 — 요닝히어</option><option value="wNDtM-cE2gs">별아 (star) — kida</option><option value="u6a0o5Qrf8g">블루베리 마카롱 — kida</option><option value="fZmmWsWTh7s">부드러운 분위기를 — cold water free music</option><option value="o_cLAGjofVA">Reminisce — Acacia official</option><option value="8S8YeWztnB0">후르츠바스켓 세레나데 오르골 — 柊 羽音</option><option value="-8aP4tZa12Y">노을의 저편에서 — 브금대통령</option><option value="nzCjD6ZeoVg">찻잔과 도넛이 춤추는 가게 — Sereno</option></select><div class="v36-music-actions"><button type="button" id="v36-prev">◀ 이전</button><button type="button" id="v36-next">다음 ▶</button></div><button type="button" id="v34-myoya-toggle" aria-pressed="false">♫ 음악 재생</button><label>음량 <input id="v34-myoya-volume" type="range" min="0" max="100" value="35" aria-label="묘야님 공간 음악 음량"><output id="v34-myoya-volume-label">35%</output></label><span class="v34-audio-status" id="v34-myoya-status" role="status">음악은 재생 버튼을 누르면 시작되며, 선택한 곡이 반복됩니다.</span><a href="https://www.youtube.com/watch?v=nSEYgMOcyB8" id="v36-myoya-link" target="_blank" rel="noopener noreferrer">YouTube에서 듣기 ↗</a></div><span class="v28-sign">MOONDO8077 · ALWAYS REMEMBERED</span></div><div class="v28-bottom">00:00 — 04:00 · 조용한 새벽에만 열리는 공간</div></div></section><div id="v21-weather-overlay" aria-hidden="true"></div><div class="sky" aria-hidden="true"></div>
 <nav><div class="container navinner"><a href="#home" class="logo">MOONDO<span>8077</span><span style="color:#ffbb9e">.</span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">☰ 메뉴</button>
@@ -457,11 +472,10 @@ body.v21-rain #v21-weather-overlay,body.v21-snow #v21-weather-overlay,body.v21-c
  <div id="myoya-exhibit-details" class="myoya-exhibit-details" hidden aria-live="polite">
   <div class="myoya-exhibit-detail-head"><div><span class="mini" id="myoya-exhibit-subtitle"></span><h4 id="myoya-exhibit-heading"></h4></div><button type="button" class="smallbtn" id="myoya-exhibit-close">닫기 ✕</button></div>
   <div class="myoya-playlist-source"><span class="mini">OFFICIAL PLAYLIST / SOURCE</span><p id="myoya-playlist-description">묘야님의 음악을 모아 둔 플레이리스트입니다.</p><a id="myoya-playlist-link" class="myoya-playlist-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">유튜브에서 전체 곡 목록 보기 ↗</a><small>이 전시관에서는 영상이나 음원을 자동 재생하지 않습니다.</small></div>
-  <div id="myoya-exhibit-song-list" class="myoya-exhibit-song-list"></div>
-  <form id="myoya-exhibit-add-form" class="myoya-exhibit-add-form"><label for="myoya-exhibit-song-title">곡명 추가</label><input id="myoya-exhibit-song-title" maxlength="120" required placeholder="확인된 곡 제목"><input id="myoya-exhibit-song-note" maxlength="240" placeholder="작품 설명 · 발매 연도 (선택)"><button type="submit" class="smallbtn">+ 목록에 추가</button></form>
-  <small>곡 목록은 이 브라우저에만 저장됩니다. 모든 방문자에게 공개하려면 나중에 HTML의 기본 목록에 곡명을 넣어야 합니다.</small>
+  <div class="myoya-v50-tools"><input id="myoya-exhibit-search" type="search" placeholder="곡 제목 검색" aria-label="전시 곡 제목 검색"><span id="myoya-exhibit-count"></span></div><div id="myoya-exhibit-song-list" class="myoya-exhibit-song-list"></div>
+  
  </div>
- <p class="myoya-exhibition-foot">이곳은 감상을 위한 전시 공간입니다. 커버곡과 오리지널곡의 원본 플레이리스트를 각각 연결했습니다. 개별 작품 설명은 확인된 자료를 바탕으로 추가할 수 있습니다.</p>
+ <p class="myoya-exhibition-foot">커버곡 130곡 · 오리지널곡 13곡. 오리지널곡과 중복된 항목을 커버 목록에서 분리했습니다. 영상 링크가 확인된 곡은 개별 영상으로 연결됩니다.</p>
 </div></article>
 <article class="myoya-card"><div class="mini">LETTERS / PRIVATE ON THIS DEVICE</div><h3>묘야님께 쓰는 편지</h3><p>작성하신 편지는 현재 브라우저에만 저장되며, 다른 방문자에게 공개되지 않습니다.</p>
 <label class="myoya-label" for="myoya-letter">오늘의 이야기</label><textarea id="myoya-letter" rows="7" placeholder="묘야님, 오늘은 이런 일이 있었어요..."></textarea>
@@ -853,49 +867,52 @@ document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,[con
  const mini=document.getElementById('v42-mini-moon'),label=document.getElementById('v42-mini-phase');
  function render(){const full=document.getElementById('v41-moon'),phase=document.getElementById('v41-phase');if(!full||!mini||!phase)return;const ctx=mini.getContext('2d');ctx.clearRect(0,0,64,64);ctx.drawImage(full,0,0,64,64);label.textContent='오늘의 달 · '+phase.textContent}
  render();setInterval(render,60000);
-})();</script><script id="v48-myoya-exhibition-interaction">
+})();</script><script id="v50-myoya-exhibition-list">
 (()=>{
- const cards=[...document.querySelectorAll('[data-myoya-category]')];
- const detail=document.getElementById('myoya-exhibit-details');
- if(!detail||!cards.length)return;
- const playlistUrls={cover:'https://www.youtube.com/playlist?list=PL_RYZ0i5TkksB6KqWVtjaaW9crVcfZOWM',original:'https://www.youtube.com/playlist?list=PL_RYZ0i5TkkvMmlLXs0Nt3NhfEkJap-c3'};
- const names={cover:['커버곡 목록','01 / COVER SONGS'],original:['오리지널곡 목록','02 / ORIGINAL SONGS']};
- const key='moondo8077_myoya_exhibit_songs_v48';
- let data={cover:[],original:[]},active=null;
- try{const stored=JSON.parse(localStorage.getItem(key)||'null');if(stored&&typeof stored==='object'){for(const k of Object.keys(names)){if(Array.isArray(stored[k]))data[k]=stored[k].filter(x=>x&&typeof x.title==='string').slice(0,150);}}}catch(e){}
- const list=document.getElementById('myoya-exhibit-song-list');
- function save(){try{localStorage.setItem(key,JSON.stringify(data));}catch(e){}}
- function render(){
-   list.replaceChildren();
-   if(!active)return;
-   if(!data[active].length){const empty=document.createElement('div');empty.className='myoya-exhibit-empty';empty.textContent='전시관에 개별 곡명은 아직 등록되지 않았습니다. 위의 플레이리스트에서 전체 곡 목록을 확인하거나 아래에서 확인된 곡명을 추가할 수 있습니다.';list.append(empty);return;}
-   data[active].forEach((song,index)=>{
-     const row=document.createElement('div');row.className='myoya-exhibit-song';
-     const info=document.createElement('div'),title=document.createElement('strong');title.textContent=String(index+1).padStart(2,'0')+' · '+song.title;info.append(title);
-     if(song.note){const note=document.createElement('small');note.textContent=song.note;info.append(note);}
-     const remove=document.createElement('button');remove.type='button';remove.className='smallbtn';remove.textContent='삭제';remove.setAttribute('aria-label',song.title+' 삭제');
-     remove.addEventListener('click',()=>{data[active].splice(index,1);save();render();});
-     row.append(info,remove);list.append(row);
-   });
- }
- function show(k){
-   active=k;detail.hidden=false;
-   document.getElementById('myoya-exhibit-heading').textContent=names[k][0];
-   document.getElementById('myoya-exhibit-subtitle').textContent=names[k][1];
-   document.getElementById('myoya-playlist-link').href=playlistUrls[k];
-   document.getElementById('myoya-playlist-link').textContent=k==='cover'?'커버곡 플레이리스트에서 곡 목록 보기 ↗':'오리지널곡 플레이리스트에서 곡 목록 보기 ↗';
-   document.getElementById('myoya-playlist-description').textContent=k==='cover'?'묘야님 커버곡을 모아 둔 유튜브 플레이리스트입니다.':'묘야님 오리지널곡을 모아 둔 유튜브 플레이리스트입니다.';
-   cards.forEach(c=>c.setAttribute('aria-expanded',String(c.dataset.myoyaCategory===k)));
-   render();detail.scrollIntoView({behavior:'smooth',block:'nearest'});
- }
- function close(){active=null;detail.hidden=true;cards.forEach(c=>c.setAttribute('aria-expanded','false'));}
- cards.forEach(c=>c.addEventListener('click',()=>{const k=c.dataset.myoyaCategory;if(active===k)close();else show(k);}));
- document.getElementById('myoya-exhibit-close').addEventListener('click',close);
- document.getElementById('myoya-exhibit-add-form').addEventListener('submit',e=>{
-   e.preventDefault();if(!active)return;
-   const titleEl=document.getElementById('myoya-exhibit-song-title'),noteEl=document.getElementById('myoya-exhibit-song-note');
-   const title=titleEl.value.trim(),note=noteEl.value.trim();if(!title)return;
-   data[active].push({title,note});save();render();e.target.reset();titleEl.focus();
- });
+const data={"cover":[{"title":"Letter Song (레터송) 💌 Korean cover","videoId":"Ci6fMdqu_LM"},{"title":"CANDY CANDY 🍭 COVER","videoId":"jnHzOI1KQJo"},{"title":"이세계아이돌 - 겨울봄(Winter Spring) / 일본어 커버","videoId":"IT-noxUoOX4"},{"title":"밤하늘의 별을⭐","videoId":"lqiKijKPLF4"},{"title":"경서 - 밤하늘의 별을(夜空の星を) Cover by 묘야","videoId":"ppM9D5ZDPHs"},{"title":"이렇게 좋아해 본 적이 없어요 COVER","videoId":"DTDT9ZvsqKI"},{"title":"고백하기 좋은 날입니다! (告白日和、です!) COVER","videoId":"QzVz2ejjc1Y"},{"title":"모찌송 COVER","videoId":"MJoKWmp6HBc"},{"title":"비비 - 밤양갱 (Cover by 묘야)","videoId":"806cm9KkKD0"},{"title":"파티피플 공명 ED - 작은 마법 (ちいさなまほう)","videoId":"7dsVdWovg3k"},{"title":"경서 - 내 마음이 너에게 닿기를(Looking for you) COVER","videoId":"bmZgKxtWC1g"},{"title":"Sailing 💙","videoId":"ML1uSeDXUoM"},{"title":"2.5주년 기념 테마송 「Thank You For The Light」 Korean ver","videoId":"J0AfJKdp8hY"},{"title":"개똥벌레 COVER","videoId":"a035cbRRyh4"},{"title":"아야츠노 유니 - 내꺼하는 법 COVER","videoId":"_LA4S3lVcHc"},{"title":"승리의 여신: 니케 SEA, YOU, AGAIN 테마곡 - So PLAYFUL! 한국어 커버","videoId":"H_uhXaQ5OWs"},{"title":"귀여워서 미안해! (可愛くてごめん) AI cover","videoId":"F4XB4f8f4C4"},{"title":"강풍 올백 (強風オールバック) Cover by 묘야","videoId":"jPmVPX6DTAk"},{"title":"거리감/キョリ感 (아하렌 양은 알 수가 없어) COVER","videoId":"FrRr7nBBZE0"},{"title":"DJMAX RESPECT - Only For You cover by 묘야 & 백희","videoId":"YkjobVkeqEo"},{"title":"블루벨 / ブルーベル / Happy New Christmas COVER","videoId":"f837DKO1lu8"},{"title":"오늘도 너를 좋아해 COVER","videoId":"nKaXP7T9EqE"},{"title":"Kobo kanaeru - Mantra Hujan KOREAN COVER / 비의 주문","videoId":"bf4gOjZh2ZE"},{"title":"Drop pop candy COVER","videoId":"4rQvXH1HQIo"},{"title":"천사를 만났어! Covered by HANA & KURUMI & MYOYA","videoId":"mRoA4nr8kAU"},{"title":"주문은 토끼입니까? 2기 ED - 두근두근 포포롱 (TV size) COVER","videoId":"W2p5jSx_kY4"},{"title":"그저 네게 맑아라 (ただ君に晴れ) COVER","videoId":"cM5gOcv01co"},{"title":"이세계아이돌 - 겨울봄(Winter Spring) COVER","videoId":"yV4XJTLmKQg"},{"title":"SeeU - 눈만 있으면 COVER","videoId":"G1HgvPmqvEA"},{"title":"블루 아카이브 - 하츠네 미쿠 Blue New World cover by myoya","videoId":"Rbdfed0612M"},{"title":"네가 있는 세계로 (君がいる世界へ) Korean cover","videoId":"K8IagVIBnXo"},{"title":"Lap Tap Love COVER","videoId":"EDxf47pQtb4"},{"title":"tête-à-tête cover","videoId":"a8TIteo-16c"},{"title":"너의 색으로 물들어 (君色に染まる) Korean cover","videoId":"E1NUPBcaKXA"},{"title":"애인을 내려주세요 COVER","videoId":"KwE13l6ZDUc"},{"title":"카드캡터 사쿠라 OST - 밤의 노래 cover","videoId":"GsQCk7T6fR8"},{"title":"Booo! Covered by 포메코 & 묘야","videoId":"g2xQu9ETpCg"},{"title":"好き！雪！本気マジック (좋아! 눈! 진심 매직) COVER","videoId":"PwsxH0Ze8Js"},{"title":"렛시, 묘야 할로윈 합핀 캔디☆피버! 한국어 커버","videoId":"EN-2_zlNJLw"},{"title":"Sweet Parade (스위트퍼레이드) Korean Cover","videoId":"7oUSmZum-1c"},{"title":"빛나는 너이니까 Covered by 묘야","videoId":"_mjtSRZXbU4"},{"title":"사랑은 반드시 급상승☆ 스즈시로x묘야 COVER","videoId":"96oiOKhQejM"},{"title":"설렘주의 COVER","videoId":"OPxXv3BqUrI"},{"title":"카페오레의 노래 1시간","videoId":"dP9yvp8oMVY"},{"title":"우유송 cover","videoId":"5zyyAKAN-Jc"},{"title":"생일 축하곡 (dear. 나!)","videoId":"M_6z05pJyAE"},{"title":"아이유(IU) - 마음 Cover","videoId":"x1OZJin4gxo"},{"title":"小さなてのひら (작은 손바닥) COVER","videoId":"GtvYL1JQ6Bc"},{"title":"두근두근 포포론 (ときめきポポロン) 불러보았다","videoId":"KMgM5Akp8bc"},{"title":"백지 COVER","videoId":"HTvo6ugJgIc"},{"title":"鹿乃 「Daisy Blue」 cover","videoId":"4oKH9PgwA_M"},{"title":"ナイティナイト (나이티나이트) COVER","videoId":"T-pWzGKcFZA"},{"title":"スキマスイッチ / 奏(かなで) Korean cover","videoId":"SZdP-0YxSlU"},{"title":"어쿠스틱 콜라보 - 응원가 cover","videoId":"4rWcG6VAqXk"},{"title":"시드사운드 - 루돌프캐롤 cover","videoId":"GUgm16BkCbU"},{"title":"奏(카나데) COVER","videoId":"GL-he4VCqwo"},{"title":"귀요미송 COVER","videoId":"5mVbV7dTvjg"},{"title":"シス×ラブ / HoneyWorks 한국어 커버","videoId":"cQE6ULMwEqw"},{"title":"Mrs. GREEN APPLE / 점묘의 노래 (点描の唄) COVER","videoId":"6Gql39bVkbI"},{"title":"Tokyo Autumn Session","videoId":"ayLAiaF7Yno"},{"title":"OH MY GIRL - Dolphin (cover)","videoId":"uRNNnTtlORM"},{"title":"DEUX - 여름안에서(In Summer) COVER","videoId":"eSfBxBZ29Yo"},{"title":"카페오레가 마시고 싶어♪","videoId":"5EJQ1rPGp74"},{"title":"45초!","videoId":"fw6IC1fCalY"},{"title":"雨あがりサンデラ (장마 끝 여름하늘) Cover","videoId":"Uax0q_QWHYQ"},{"title":"さくら さくら (Di Gi Charat OST) COVER","videoId":"x3R2fI62P6Q"},{"title":"백금디스코(白金ディスコ) Korean cover","videoId":"vCBoY0i2d-4"},{"title":"카나데 생방송 라이브 (※잡음주의)","videoId":"LGUhE1Fegtw"},{"title":"유루캠△ ED 후유비요리(ふゆびより/온화한 겨울날) COVER","videoId":"U2GLV4h0l-s"},{"title":"초바사 크로니클 극장판 새장나라의 공주님 ED (AMRITA/アムリタ) COVER","videoId":"Y3RxZNrcJiM"},{"title":"손가락을 건 약속 (勾指起誓) cover","videoId":"zKgvRDOI2fw"},{"title":"겨울요정 COVER","videoId":"e15AlDbcEuk"},{"title":"HoneyWorks - ワタシノテンシ (나의 천사) COVER","videoId":"3Ts0nFEDmBM"},{"title":"메리 메리 크리스마스 (very merry christmas)","videoId":"mX1nJ_Op1zo"},{"title":"데스티니 차일드×하츠네 미쿠 / 유키 미쿠 콜라보 - 그렇지(だよね) COVER","videoId":"KT1-vYxXQ5E"},{"title":"10cm - 매트리스(Mattress) COVER","videoId":"wmcis5yUWB4"},{"title":"너도 나쁜 사람이라 다행이야 (きみも悪い人でよかった) COVER","videoId":"YeYpUJXVdFU"},{"title":"아저씨 COVER","videoId":"vuK8SEIXsWU"},{"title":"주문을 외울게 (아르피엘 '아이린' 주제곡) COVER","videoId":"QJlnI5Uh13k"},{"title":"아이유 - Dreaming (드림하이 OST) COVER","videoId":"boQ8rRMd2zQ"},{"title":"오오츠카 아이 - 사쿠란보 COVER","videoId":"mFYC_yNNqtI"},{"title":"테일즈런너 라라 O.S.T - 바람이 되어 COVER","videoId":"tAM3_6oe7gI"},{"title":"해피신디사이저 (ハッピーシンセサイザ) COVER","videoId":"0sH6cux6RW4"},{"title":"HoneyWorks - ファンサ (팬서비스) COVER","videoId":"nyFEKhXt8uE"},{"title":"우연히 봄 (feat. 천령) COVER","videoId":"Wrq-mNtACDg"},{"title":"볼빨간사춘기 - You(=I) COVER","videoId":"JVKeeCYNk6o"},{"title":"디지캐럿 - Baby ? Lady ? COVER","videoId":"e2OJ3OjUrxo"},{"title":"ANTARCTICA (남극) cover","videoId":"52JVMSrgzqA"},{"title":"러브히나 OST - 사랑의천사가 춤추듯 내려와 COVER","videoId":"XYfcJmj4nkU"},{"title":"さようなら、花泥棒さん / 안녕, 꽃도둑씨 COVER","videoId":"LzTegIxtkNs"},{"title":"고양이 소리를 따라해보자 Korean Cover","videoId":"st4r-KDWxu4"},{"title":"Dear My Friend, 테일즈러너 라라 O.S.T COVER","videoId":"bFhnI05LZGc"},{"title":"J Rabbit(제이레빗) - 요즘 너 말야 COVER","videoId":"w3E8Znp4DSw"},{"title":"일요일의 비밀(日曜日の秘密) short ver. COVER","videoId":"eRr8LGBox7w"},{"title":"ぐーぐー","videoId":"s0O48ohCvFc"},{"title":"Snow Flower (ちっちゃな雪使いシュガー OST) 한국어 커버","videoId":"a9QdlS3gv_I"},{"title":"이진아 - 공항 가는 길 COVER","videoId":"LdWzs-2qx7c"},{"title":"쏘아올린 불꽃 「打上花火」 COVER","videoId":"8oyvNrSsjWY"},{"title":"망상감상대상연맹 (妄想感傷代償連盟) COVER","videoId":"Y7AdcmU6hws"},{"title":"Crack (short ver.) Cover","videoId":"OYFY3PF0Bz4"},{"title":"鹿乃 「day by day」 (short ver.) cover","videoId":"fMgimZuhgAw"},{"title":"나, 아이돌 선언 「私、アイドル宣言」 Korean Cover","videoId":"bNAik3jXI2w"},{"title":"아이유(IU) - Rain Drop COVER","videoId":"-MgMKfMdHbw"},{"title":"귀여워지고싶어 (可愛くなりたい) COVER","videoId":"E17Vg_bP7c8"},{"title":"눈이 녹아 (ユキドケ) COVER","videoId":"KBpuAwuCOi0"},{"title":"플라토닉 · 러브 (プラトニック・ラヴ) COVER","videoId":"xhgY5E3QAUE"},{"title":"오토리모노가타리 OP - 망상 익스프레스 COVER","videoId":"Pr7QJCnTOvo"},{"title":"너와 나의 별 / フタリボシ(Korean ver) COVER","videoId":"4HpQ-y2TQlI"},{"title":"별무리 비너스 (星屑ビーナス) Piano ver. COVER","videoId":"VS1iJVywfa8"},{"title":"시유 - 우산 COVER","videoId":"ZxJRJ4JEWgc"},{"title":"미리메리크리스마스 Merry Christmas In Advance cover","videoId":"qBpF2xfQDlI"},{"title":"StarCrew 한국어 개사 COVER","videoId":"0eD4SV9rtoY"},{"title":"이진아 - 시간이 천천히 cover","videoId":"p9sVQVxc2bI"},{"title":"Happy Halloween cover","videoId":"ahw0dlhPmjI"},{"title":"오빠야 - 신현희와 김루트 COVER","videoId":"PvakPxcXgfI"},{"title":"Hello/How are you (Mwk Remix) 한국어 커버","videoId":"OF0ZgX46lbM"},{"title":"Hello How are you 한국어 개사","videoId":"UkE3xi8oOjs"},{"title":"밤과 별의 노래 (Starry Night) - 온유 & 이진아 COVER","videoId":"T2eEvexGCes"},{"title":"경단대가족 COVER","videoId":"jpxeHuIoz5Y"},{"title":"메리메리 (メリー×メリー) 한국어 개사","videoId":"-ApZw9-ci7I"},{"title":"wishing Re:zero 18화 삽입곡 리제로 렘 캐릭터송 한국어 cover","videoId":"og4X03DsI7M"},{"title":"Boundary - UNI (Official Sample Track)","videoId":"j1mdMS-81UI"},{"title":"Mr.Music / 미스터 뮤직 Christmas Edition cover","videoId":"qIHoNUNzQx8"},{"title":"White Snow Falling (Korean Rap. ver)","videoId":"oIVMiMx0DuU"},{"title":"백금디스코(白金ディスコ) 한국어 cover","videoId":"YfyvNaGb_hA"},{"title":"금요일의 아침인사(金曜日のおはよう) another story 한국어 cover","videoId":"7ufLFmUIMp4"},{"title":"카리 파뮤파뮤 - PON PON PON COVER","videoId":"22RHf0oBa7w"},{"title":"나와 호랑이님 OST - 호랑풍류가 COVER","videoId":"En7ZmLJCJ7A"},{"title":"Dreaming Up! (드리밍 업!) [2015 대규모 콜라보레이션 프로젝트]","videoId":"D2TEY6-3PaI"},{"title":"안녕! 디지몬 (디지몬 어드벤처 OST) COVER","videoId":"vlrFQ7praIk"}],"original":[{"title":"P, E, A, C, E No Side - Salmon bear (feat. myoya)","duration":"4:15","videoId":"BRydiN2wW6E"},{"title":"One More Lovely 💙","duration":"3:10","videoId":"xQELHQJS-EE"},{"title":"Sha La La La Wind - Myoya","duration":"3:24","videoId":"CV9CvU1DP0Y"},{"title":"White Blessing (새하얀 축복) 🎄","duration":"3:21","videoId":"ZJZkmKW_mwI"},{"title":"소설 「드루이드 천재가 너무 강함」 삽입곡 - Good night(잘자요)","duration":"3:09","videoId":"_7zYnAxXXPg"},{"title":"litmus* feat. 묘야 - Deadlock Love","duration":"3:26","videoId":"3WcHLQf7APY"},{"title":"RUN ✨","duration":"3:35","videoId":"18Btqq6ZxvQ"},{"title":"litmus* feat. 묘야 - Deadlock Love [Original PV]","duration":"2:21","videoId":"E00Nk0TEU7I"},{"title":"차 마시는 시간 (Tea Time)","duration":"3:13","videoId":"LN8y3ukhYCk"},{"title":"묘야 - 가을바람 🍂","duration":"2:38","videoId":"La-4DH1L_e4"},{"title":"Dreamy Sweet Night ⭐ litmus* (feat. Myoya)","duration":"3:33","videoId":"9FBSconG1PE"},{"title":"[ORIGINAL] 확","duration":"0:40","videoId":"Q0CcBPhEXrE"},{"title":"ドラマティック？！(드라마틱) - Salmon bear (feat. Myoya)","duration":"3:10","videoId":"Q0iUCPgdU8w"}]};
+const urls={cover:'https://www.youtube.com/playlist?list=PL_RYZ0i5TkksB6KqWVtjaaW9crVcfZOWM',original:'https://www.youtube.com/playlist?list=PL_RYZ0i5TkkvMmlLXs0Nt3NhfEkJap-c3'};
+const names={cover:['커버곡 목록','01 / COVER SONGS'],original:['오리지널곡 목록','02 / ORIGINAL SONGS']};
+const cards=[...document.querySelectorAll('[data-myoya-category]')],detail=document.getElementById('myoya-exhibit-details'),list=document.getElementById('myoya-exhibit-song-list');
+if(!detail||!list)return;
+let active=null;
+const input=document.getElementById('myoya-exhibit-search');
+function render(){
+list.replaceChildren();
+if(!active)return;
+const q=(input?.value||'').trim().toLocaleLowerCase();
+const songs=data[active],found=songs.map((song,i)=>({...song,index:i+1})).filter(song=>song.title.toLocaleLowerCase().includes(q));
+document.getElementById('myoya-exhibit-count').textContent=`${found.length}곡 / 전체 ${songs.length}곡`;
+const frag=document.createDocumentFragment();
+for(const song of found){
+ const a=document.createElement('a');a.className='myoya-v50-track';a.target='_blank';a.rel='noopener noreferrer';
+ a.href=song.videoId?'https://www.youtube.com/watch?v='+song.videoId:'https://www.youtube.com/results?search_query='+encodeURIComponent('묘야 '+song.title);
+ if(!song.videoId){a.classList.add('myoya-v52-unverified');a.title='개별 영상 링크 미확인 — 유튜브 검색 결과 열기';}
+ const no=document.createElement('span');no.className='myoya-v50-no';no.textContent=String(song.index).padStart(2,'0');
+ const thumb=document.createElement('span');thumb.className='myoya-v50-thumb';if(song.videoId){const im=document.createElement('img');im.src='https://i.ytimg.com/vi/'+song.videoId+'/mqdefault.jpg';im.alt='';im.loading='lazy';thumb.append(im);}else{thumb.textContent='?';}thumb.setAttribute('aria-hidden','true');
+ const info=document.createElement('span');info.className='myoya-v50-info';
+ const title=document.createElement('strong');title.textContent=song.title;
+ const artist=document.createElement('small');artist.textContent='묘야 · '+(active==='cover'?'커버곡':'오리지널곡')+(song.videoId?'':' · 개별 링크 미확인');
+ info.append(title,artist);a.append(no,thumb,info);
+ if(song.duration){const time=document.createElement('span');time.className='myoya-v50-duration';time.textContent=song.duration;a.append(time);}
+ const external=document.createElement('span');external.className='myoya-v50-out';external.textContent='↗';a.append(external);
+ frag.append(a);
+}
+list.append(frag);
+if(!found.length){const empty=document.createElement('div');empty.className='myoya-exhibit-empty';empty.textContent='검색 결과가 없어.';list.append(empty);}
+}
+function close(){active=null;detail.hidden=true;cards.forEach(c=>c.setAttribute('aria-expanded','false'));}
+function show(k){
+ active=k;detail.hidden=false;
+ document.getElementById('myoya-exhibit-heading').textContent=names[k][0];
+ document.getElementById('myoya-exhibit-subtitle').textContent=names[k][1];
+ document.getElementById('myoya-playlist-link').href=urls[k];
+ document.getElementById('myoya-playlist-link').textContent='유튜브 원본 재생목록 보기 ↗';
+ document.getElementById('myoya-playlist-description').textContent=k==='cover'?'오리지널곡과 중복된 항목을 제외한 커버곡을 전시합니다.':'확인된 오리지널곡 13곡을 재생목록 순서대로 전시합니다.';
+ input.value='';cards.forEach(c=>c.setAttribute('aria-expanded',String(c.dataset.myoyaCategory===k)));
+ render();detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+cards.forEach(c=>c.addEventListener('click',()=>{const k=c.dataset.myoyaCategory;if(active===k)close();else show(k);}));
+document.getElementById('myoya-exhibit-close').addEventListener('click',close);
+input.addEventListener('input',render);
 })();
 </script></body></html>
