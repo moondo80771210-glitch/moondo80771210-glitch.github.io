@@ -367,6 +367,31 @@ body.v21-rain #v21-weather-overlay,body.v21-snow #v21-weather-overlay,body.v21-c
 .myoya-exhibit p{margin:0;color:#54718a!important;font-size:13px!important}
 .myoya-exhibition-foot{font-size:12px!important;color:#688da6!important}
 @media(max-width:620px){.myoya-exhibition-grid{grid-template-columns:1fr}.myoya-exhibit{min-height:205px}}
+</style><style id="v48-myoya-exhibition-interaction">
+.myoya-exhibit{font:inherit;text-align:left;cursor:pointer;color:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
+.myoya-exhibit:hover,.myoya-exhibit:focus-visible{transform:translateY(-3px);border-color:#5b9dc4;box-shadow:0 9px 25px #427e9b22}
+.myoya-exhibit[aria-expanded="true"]{border-color:#377da7;background:linear-gradient(145deg,#effaff,#d6ecf8)}
+.myoya-exhibit-arrow{font-size:15px;color:#689bbb}
+.myoya-exhibit-details{border:1px solid #a4cfe7;border-radius:16px;padding:22px;background:#f4fbff;margin:12px 0 22px;color:#28516e}
+.myoya-exhibit-details[hidden]{display:none!important}
+.myoya-exhibit-detail-head{display:flex;justify-content:space-between;gap:12px;align-items:start;margin-bottom:16px}
+.myoya-exhibit-detail-head h4{font-size:21px;margin:8px 0;color:#244c69}
+.myoya-exhibit-song-list{display:grid;gap:10px;margin-bottom:16px}
+.myoya-exhibit-song{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:13px 15px;border:1px solid #c6dfed;background:#fff;border-radius:12px}
+.myoya-exhibit-song strong{display:block;font-size:14px;color:#244c69}
+.myoya-exhibit-song small{display:block;color:#62859d;margin-top:4px}
+.myoya-exhibit-empty{padding:24px 12px;text-align:center;border:1px dashed #a8cce0;border-radius:12px;color:#62859d;font-size:13px}
+.myoya-exhibit-add-form{display:grid;gap:9px}
+.myoya-exhibit-add-form label{font-size:12px;font-weight:700}
+.myoya-exhibit-add-form input{width:100%;box-sizing:border-box;padding:11px;border:1px solid #b6d4e6;border-radius:9px;background:#fff;color:#244c69;font:inherit}
+.myoya-exhibit-add-form .smallbtn{justify-self:start}
+@media(max-width:620px){.myoya-exhibit-details{padding:15px}}
+</style><style id="v49-myoya-playlist-style">
+.myoya-playlist-source{background:linear-gradient(130deg,#e4f3fb,#f7fbff);border:1px solid #bad9ea;border-radius:13px;padding:17px;margin-bottom:16px;color:#315c78}
+.myoya-playlist-source p{font-size:13px;margin:9px 0 13px;line-height:1.7}
+.myoya-playlist-source small{display:block;margin-top:10px;color:#64879b}
+.myoya-playlist-link{display:inline-flex;align-items:center;padding:11px 15px;border-radius:10px;background:#2e6588;color:#fff!important;text-decoration:none;font-size:13px;font-weight:700}
+.myoya-playlist-link:hover{background:#204d6c}
 </style></head>
 <body><button type="button" id="v33-mine-tab" aria-label="지뢰찾기 게임 열기" title="지뢰찾기 열기">💣 GAME</button><button id="v27-myoya-star" type="button" hidden aria-label="새벽에 나타난 묘야님의 별" title="새벽에 나타난 별">✧</button><section id="v28-secret-realm" class="v28-secret-realm" aria-label="묘야님을 위한 새벽의 비밀 공간" aria-hidden="true" hidden><div class="v28-realm-inner"><div class="v28-top"><span>✦  THE QUIET HOURS</span><button type="button" id="v28-secret-close" aria-label="비밀 공간 닫기">← 돌아가기</button></div><div class="v28-center"><span class="v28-halo" aria-hidden="true">✧</span><span class="v28-eyebrow">FOR MYOYA</span><h2>고요한 새벽, 작은 별 하나.</h2><p class="v28-lead">오늘도 문득 생각나는 사람이 있습니다.</p><p>그저, 오래도록 기억하고 싶습니다.</p><div class="v28-quote">아무 말 없이 잠시 머물러도 괜찮은 곳.<br>이곳의 작은 별은 묘야님을 기억합니다.</div><div class="v34-audio" id="v34-myoya-audio"><label for="v36-track">묘야님이 듣던 음악</label><select id="v36-track" aria-label="음악 선택"><option value="nSEYgMOcyB8">하얀 나의 오두막집 — 브금대통령</option><option value="_Iuzf93YQo0">In Dream — 브금대통령</option><option value="9wBqKu8W-wI">할아버지의 낡은 시계 오르골 — CEPA MuziKart Rodem</option><option value="e-Xi4nxk7e4">Silent, Christmas Night — 브금대통령</option><option value="XZP4JwZJM5Y">카드캡터체리 OST 피아노 커버 모음 — 요닝히어</option><option value="wNDtM-cE2gs">별아 (star) — kida</option><option value="u6a0o5Qrf8g">블루베리 마카롱 — kida</option><option value="fZmmWsWTh7s">부드러운 분위기를 — cold water free music</option><option value="o_cLAGjofVA">Reminisce — Acacia official</option><option value="8S8YeWztnB0">후르츠바스켓 세레나데 오르골 — 柊 羽音</option><option value="-8aP4tZa12Y">노을의 저편에서 — 브금대통령</option><option value="nzCjD6ZeoVg">찻잔과 도넛이 춤추는 가게 — Sereno</option></select><div class="v36-music-actions"><button type="button" id="v36-prev">◀ 이전</button><button type="button" id="v36-next">다음 ▶</button></div><button type="button" id="v34-myoya-toggle" aria-pressed="false">♫ 음악 재생</button><label>음량 <input id="v34-myoya-volume" type="range" min="0" max="100" value="35" aria-label="묘야님 공간 음악 음량"><output id="v34-myoya-volume-label">35%</output></label><span class="v34-audio-status" id="v34-myoya-status" role="status">음악은 재생 버튼을 누르면 시작되며, 선택한 곡이 반복됩니다.</span><a href="https://www.youtube.com/watch?v=nSEYgMOcyB8" id="v36-myoya-link" target="_blank" rel="noopener noreferrer">YouTube에서 듣기 ↗</a></div><span class="v28-sign">MOONDO8077 · ALWAYS REMEMBERED</span></div><div class="v28-bottom">00:00 — 04:00 · 조용한 새벽에만 열리는 공간</div></div></section><div id="v21-weather-overlay" aria-hidden="true"></div><div class="sky" aria-hidden="true"></div>
 <nav><div class="container navinner"><a href="#home" class="logo">MOONDO<span>8077</span><span style="color:#ffbb9e">.</span></a>
@@ -426,10 +451,17 @@ body.v21-rain #v21-weather-overlay,body.v21-snow #v21-weather-overlay,body.v21-c
  <h3>목소리가 머무는 곳</h3>
  <p>묘야님이 남긴 음악을 기억하는 작은 전시 공간입니다. 재생 기능 없이 커버곡과 오리지널곡을 나누어 소개합니다.</p>
  <div class="myoya-exhibition-grid">
-  <section class="myoya-exhibit"><span class="myoya-exhibit-number">01 / COVER SONGS</span><div class="myoya-exhibit-symbol" aria-hidden="true">♫</div><h4>커버곡</h4><p>묘야님의 목소리로 다시 만난 노래들. 익숙한 선율에 남겨진 특별한 기억을 위한 자리.</p></section>
-  <section class="myoya-exhibit"><span class="myoya-exhibit-number">02 / ORIGINAL SONGS</span><div class="myoya-exhibit-symbol" aria-hidden="true">✧</div><h4>오리지널곡</h4><p>묘야님만의 이야기와 감정이 담긴 노래들을 기억하는 자리.</p></section>
+  <button type="button" class="myoya-exhibit" data-myoya-category="cover" aria-controls="myoya-exhibit-details" aria-expanded="false"><span class="myoya-exhibit-number">01 / COVER SONGS</span><div class="myoya-exhibit-symbol" aria-hidden="true">♫</div><h4>커버곡 <span class="myoya-exhibit-arrow">↗</span></h4><p>묘야님의 목소리로 다시 만난 노래들. 익숙한 선율에 남겨진 특별한 기억을 위한 자리.</p></button>
+  <button type="button" class="myoya-exhibit" data-myoya-category="original" aria-controls="myoya-exhibit-details" aria-expanded="false"><span class="myoya-exhibit-number">02 / ORIGINAL SONGS</span><div class="myoya-exhibit-symbol" aria-hidden="true">✧</div><h4>오리지널곡 <span class="myoya-exhibit-arrow">↗</span></h4><p>묘야님만의 이야기와 감정이 담긴 노래들을 기억하는 자리.</p></button>
  </div>
- <p class="myoya-exhibition-foot">이곳은 감상을 위한 전시 공간입니다. 곡명과 작품 설명은 확인된 자료를 바탕으로 추후 추가할 수 있습니다.</p>
+ <div id="myoya-exhibit-details" class="myoya-exhibit-details" hidden aria-live="polite">
+  <div class="myoya-exhibit-detail-head"><div><span class="mini" id="myoya-exhibit-subtitle"></span><h4 id="myoya-exhibit-heading"></h4></div><button type="button" class="smallbtn" id="myoya-exhibit-close">닫기 ✕</button></div>
+  <div class="myoya-playlist-source"><span class="mini">OFFICIAL PLAYLIST / SOURCE</span><p id="myoya-playlist-description">묘야님의 음악을 모아 둔 플레이리스트입니다.</p><a id="myoya-playlist-link" class="myoya-playlist-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">유튜브에서 전체 곡 목록 보기 ↗</a><small>이 전시관에서는 영상이나 음원을 자동 재생하지 않습니다.</small></div>
+  <div id="myoya-exhibit-song-list" class="myoya-exhibit-song-list"></div>
+  <form id="myoya-exhibit-add-form" class="myoya-exhibit-add-form"><label for="myoya-exhibit-song-title">곡명 추가</label><input id="myoya-exhibit-song-title" maxlength="120" required placeholder="확인된 곡 제목"><input id="myoya-exhibit-song-note" maxlength="240" placeholder="작품 설명 · 발매 연도 (선택)"><button type="submit" class="smallbtn">+ 목록에 추가</button></form>
+  <small>곡 목록은 이 브라우저에만 저장됩니다. 모든 방문자에게 공개하려면 나중에 HTML의 기본 목록에 곡명을 넣어야 합니다.</small>
+ </div>
+ <p class="myoya-exhibition-foot">이곳은 감상을 위한 전시 공간입니다. 커버곡과 오리지널곡의 원본 플레이리스트를 각각 연결했습니다. 개별 작품 설명은 확인된 자료를 바탕으로 추가할 수 있습니다.</p>
 </div></article>
 <article class="myoya-card"><div class="mini">LETTERS / PRIVATE ON THIS DEVICE</div><h3>묘야님께 쓰는 편지</h3><p>작성하신 편지는 현재 브라우저에만 저장되며, 다른 방문자에게 공개되지 않습니다.</p>
 <label class="myoya-label" for="myoya-letter">오늘의 이야기</label><textarea id="myoya-letter" rows="7" placeholder="묘야님, 오늘은 이런 일이 있었어요..."></textarea>
@@ -821,4 +853,49 @@ document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,[con
  const mini=document.getElementById('v42-mini-moon'),label=document.getElementById('v42-mini-phase');
  function render(){const full=document.getElementById('v41-moon'),phase=document.getElementById('v41-phase');if(!full||!mini||!phase)return;const ctx=mini.getContext('2d');ctx.clearRect(0,0,64,64);ctx.drawImage(full,0,0,64,64);label.textContent='오늘의 달 · '+phase.textContent}
  render();setInterval(render,60000);
-})();</script></body></html>
+})();</script><script id="v48-myoya-exhibition-interaction">
+(()=>{
+ const cards=[...document.querySelectorAll('[data-myoya-category]')];
+ const detail=document.getElementById('myoya-exhibit-details');
+ if(!detail||!cards.length)return;
+ const playlistUrls={cover:'https://www.youtube.com/playlist?list=PL_RYZ0i5TkksB6KqWVtjaaW9crVcfZOWM',original:'https://www.youtube.com/playlist?list=PL_RYZ0i5TkkvMmlLXs0Nt3NhfEkJap-c3'};
+ const names={cover:['커버곡 목록','01 / COVER SONGS'],original:['오리지널곡 목록','02 / ORIGINAL SONGS']};
+ const key='moondo8077_myoya_exhibit_songs_v48';
+ let data={cover:[],original:[]},active=null;
+ try{const stored=JSON.parse(localStorage.getItem(key)||'null');if(stored&&typeof stored==='object'){for(const k of Object.keys(names)){if(Array.isArray(stored[k]))data[k]=stored[k].filter(x=>x&&typeof x.title==='string').slice(0,150);}}}catch(e){}
+ const list=document.getElementById('myoya-exhibit-song-list');
+ function save(){try{localStorage.setItem(key,JSON.stringify(data));}catch(e){}}
+ function render(){
+   list.replaceChildren();
+   if(!active)return;
+   if(!data[active].length){const empty=document.createElement('div');empty.className='myoya-exhibit-empty';empty.textContent='전시관에 개별 곡명은 아직 등록되지 않았습니다. 위의 플레이리스트에서 전체 곡 목록을 확인하거나 아래에서 확인된 곡명을 추가할 수 있습니다.';list.append(empty);return;}
+   data[active].forEach((song,index)=>{
+     const row=document.createElement('div');row.className='myoya-exhibit-song';
+     const info=document.createElement('div'),title=document.createElement('strong');title.textContent=String(index+1).padStart(2,'0')+' · '+song.title;info.append(title);
+     if(song.note){const note=document.createElement('small');note.textContent=song.note;info.append(note);}
+     const remove=document.createElement('button');remove.type='button';remove.className='smallbtn';remove.textContent='삭제';remove.setAttribute('aria-label',song.title+' 삭제');
+     remove.addEventListener('click',()=>{data[active].splice(index,1);save();render();});
+     row.append(info,remove);list.append(row);
+   });
+ }
+ function show(k){
+   active=k;detail.hidden=false;
+   document.getElementById('myoya-exhibit-heading').textContent=names[k][0];
+   document.getElementById('myoya-exhibit-subtitle').textContent=names[k][1];
+   document.getElementById('myoya-playlist-link').href=playlistUrls[k];
+   document.getElementById('myoya-playlist-link').textContent=k==='cover'?'커버곡 플레이리스트에서 곡 목록 보기 ↗':'오리지널곡 플레이리스트에서 곡 목록 보기 ↗';
+   document.getElementById('myoya-playlist-description').textContent=k==='cover'?'묘야님 커버곡을 모아 둔 유튜브 플레이리스트입니다.':'묘야님 오리지널곡을 모아 둔 유튜브 플레이리스트입니다.';
+   cards.forEach(c=>c.setAttribute('aria-expanded',String(c.dataset.myoyaCategory===k)));
+   render();detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+ }
+ function close(){active=null;detail.hidden=true;cards.forEach(c=>c.setAttribute('aria-expanded','false'));}
+ cards.forEach(c=>c.addEventListener('click',()=>{const k=c.dataset.myoyaCategory;if(active===k)close();else show(k);}));
+ document.getElementById('myoya-exhibit-close').addEventListener('click',close);
+ document.getElementById('myoya-exhibit-add-form').addEventListener('submit',e=>{
+   e.preventDefault();if(!active)return;
+   const titleEl=document.getElementById('myoya-exhibit-song-title'),noteEl=document.getElementById('myoya-exhibit-song-note');
+   const title=titleEl.value.trim(),note=noteEl.value.trim();if(!title)return;
+   data[active].push({title,note});save();render();e.target.reset();titleEl.focus();
+ });
+})();
+</script></body></html>
