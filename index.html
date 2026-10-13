@@ -208,8 +208,42 @@ nav{background:linear-gradient(180deg,#091429f5,#0c1830e9);box-shadow:0 9px 30px
 .links .nav-pill:focus-visible{outline:2px solid #c3e3ff;outline-offset:3px}
 @media(max-width:780px){.navinner{height:auto;min-height:68px;display:block;padding:12px 0 6px}.logo{display:block;margin-bottom:6px}.links,.links.open{padding:6px 1px 8px;gap:6px}.links .nav-pill{min-height:35px;padding:7px 11px;font-size:11px}.links .nav-feature{padding:7px 12px}nav{position:sticky}}
 @media(prefers-reduced-motion:reduce){.links .nav-pill{transition:none}}
+
+/* v25: subtle star easter egg */
+.v25-secret-star{display:inline-flex;align-items:center;gap:8px;background:none;border:0;padding:0;cursor:pointer;color:inherit;position:relative;transition:transform .25s,filter .25s}.v25-secret-star span{font-size:14px;color:#b6d8ff;opacity:.6;animation:v25-twinkle 3s ease-in-out infinite}.v25-secret-star:hover,.v25-secret-star:focus-visible{transform:scale(1.13);filter:drop-shadow(0 0 10px #b4d6ff)}@keyframes v25-twinkle{50%{opacity:1;transform:scale(1.3)}}
+.v25-secret-dialog{border:1px solid #99c9ff77;border-radius:24px;padding:0;background:radial-gradient(circle at 50% 10%,#274e7d,#101a32 65%,#090f20);color:#f0f6ff;width:min(480px,calc(100% - 32px));max-height:calc(100dvh - 40px);box-shadow:0 24px 90px #0009;text-align:center}.v25-secret-dialog::backdrop{background:#050a17cc;backdrop-filter:blur(7px)}.v25-secret-content{padding:45px 26px}.v25-secret-symbol{font-size:48px;color:#bddaff;text-shadow:0 0 30px #9abfff;display:block;margin-bottom:18px}.v25-secret-content h3{font-size:24px;margin:0 0 14px}.v25-secret-content p{color:#c0d0e8;line-height:1.9;word-break:keep-all}.v25-secret-content button{border:1px solid #aacaff77;background:#1b3356;color:white;border-radius:12px;padding:11px 22px;cursor:pointer;margin-top:16px}
+
+/* v27: midnight-only MYOYA star */
+#v27-myoya-star{position:fixed;z-index:54;right:clamp(22px,6vw,100px);top:clamp(110px,17vh,185px);width:48px;height:48px;border:0;background:transparent;color:#e6f9ff;font-size:31px;cursor:pointer;filter:drop-shadow(0 0 8px #a4e6ff);animation:v27-star-glow 3.5s ease-in-out infinite}
+#v27-myoya-star[hidden]{display:none!important}#v27-myoya-star:hover{transform:scale(1.15)}#v27-myoya-star:focus-visible{outline:2px solid #9bd9ff;border-radius:50%}
+@keyframes v27-star-glow{50%{opacity:.58;filter:drop-shadow(0 0 22px #d9f7ff)}}
+.v27-dialog{border:1px solid #b8e8ff;border-radius:24px;background:linear-gradient(145deg,#f9fdff,#d9f2ff);color:#255578;width:min(480px,calc(100% - 32px));padding:32px 28px;text-align:center;box-shadow:0 24px 85px #0008;max-height:90vh;overflow:auto}.v27-dialog::backdrop{background:#06152bc9;backdrop-filter:blur(7px)}.v27-dialog .v27-symbol{font-size:50px;color:#6dbce6;text-shadow:0 0 18px #a4e7ff}.v27-dialog h3{font-size:25px;margin:14px 0}.v27-dialog p{font-size:14px;line-height:1.95;color:#4b7290;word-break:keep-all}.v27-dialog button{padding:11px 16px;margin:8px 5px 0;border:1px solid #83c8eb;border-radius:11px;background:#eaf9ff;color:#245c80;cursor:pointer}.v27-dialog button.v27-primary{background:#4d9cc9;color:white}
+body.myoya-open #v27-myoya-star,body.music-open #v27-myoya-star,body.horror-open #v27-myoya-star{display:none!important}
+@media(prefers-reduced-motion:reduce){#v27-myoya-star{animation:none}}
+
+/* v29: quiet midnight room for MYOYA */
+.v28-secret-realm[hidden]{display:none!important}
+.v28-secret-realm{position:fixed;inset:0;z-index:9999;overflow:auto;isolation:isolate;color:#dbe9f1;background:linear-gradient(180deg,#101c2c 0%,#1a3044 49%,#334c5d 100%)}
+.v28-secret-realm:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 85%,#a4bfc522,transparent 54%),radial-gradient(circle at 78% 18%,#d3e8ee14,transparent 28%)}
+.v28-secret-realm:after{content:"";position:fixed;left:0;right:0;bottom:0;height:20vh;pointer-events:none;background:linear-gradient(180deg,transparent,#a6c1c014)}
+.v28-realm-inner{width:min(760px,calc(100% - 44px));min-height:100dvh;margin:auto;display:flex;flex-direction:column;position:relative;z-index:1}
+.v28-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:29px 0;color:#b6cbd7;font-size:11px;letter-spacing:.17em}
+.v28-top button{background:transparent;border:1px solid #9eb8c55c;color:#dbe9f1;border-radius:99px;padding:10px 17px;cursor:pointer;font:inherit;letter-spacing:0}
+.v28-top button:hover,.v28-top button:focus-visible{background:#d7e7ee16;outline:1px solid #b8d4df}
+.v28-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 12px 80px}
+.v28-halo{font-size:44px;line-height:1;color:#e2f2f8;text-shadow:0 0 17px #c5e4f699,0 0 50px #b1d6e14a;animation:v29-soft-glow 9s ease-in-out infinite}
+.v28-eyebrow{font-size:10px;letter-spacing:.32em;font-weight:500;color:#b2c9d8;margin:38px 0 16px}
+.v28-center h2{font-size:clamp(25px,4.5vw,42px);font-weight:500;line-height:1.45;letter-spacing:-.04em;color:#eef6f9;margin:0 0 32px}
+.v28-center p{line-height:2.2;font-size:clamp(14px,1.6vw,16px);color:#c1d1da;word-break:keep-all;margin:4px 0}
+.v28-center .v28-lead{color:#e0e9ee}
+.v28-quote{border-top:1px solid #b5d1db36;margin:43px 0 0;padding:28px 8px 0;color:#b4cad6;font-size:13px;line-height:2}
+.v28-sign{margin-top:32px;font-size:10px;letter-spacing:.2em;color:#93afbe}
+.v28-bottom{text-align:center;padding:24px 0 32px;color:#9bb3c1;font-size:11px;letter-spacing:.04em}
+@keyframes v29-soft-glow{50%{opacity:.68;text-shadow:0 0 10px #c5e4f655,0 0 28px #b1d6e122}}
+body.v28-realm-open{overflow:hidden}body.v28-realm-open #v27-myoya-star{display:none!important}
+@media(prefers-reduced-motion:reduce){.v28-halo{animation:none}}
 </style></head>
-<body><div id="v21-weather-overlay" aria-hidden="true"></div><div class="sky" aria-hidden="true"></div>
+<body><button id="v27-myoya-star" type="button" hidden aria-label="새벽에 나타난 묘야님의 별" title="새벽에 나타난 별">✧</button><section id="v28-secret-realm" class="v28-secret-realm" aria-label="묘야님을 위한 새벽의 비밀 공간" aria-hidden="true" hidden><div class="v28-realm-inner"><div class="v28-top"><span>✦  THE QUIET HOURS</span><button type="button" id="v28-secret-close" aria-label="비밀 공간 닫기">← 돌아가기</button></div><div class="v28-center"><span class="v28-halo" aria-hidden="true">✧</span><span class="v28-eyebrow">FOR MYOYA</span><h2>고요한 새벽, 작은 별 하나.</h2><p class="v28-lead">오늘도 문득 생각나는 사람이 있습니다.</p><p>그저, 오래도록 기억하고 싶습니다.</p><div class="v28-quote">아무 말 없이 잠시 머물러도 괜찮은 곳.<br>이곳의 작은 별은 묘야님을 기억합니다.</div><span class="v28-sign">MOONDO8077 · ALWAYS REMEMBERED</span></div><div class="v28-bottom">00:00 — 04:00 · 조용한 새벽에만 열리는 공간</div></div></section><div id="v21-weather-overlay" aria-hidden="true"></div><div class="sky" aria-hidden="true"></div>
 <nav><div class="container navinner"><a href="#home" class="logo">MOONDO<span>8077</span><span style="color:#ffbb9e">.</span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">☰ 메뉴</button>
 <div class="links" id="navlinks" aria-label="사이트 탐색">
@@ -225,7 +259,7 @@ nav{background:linear-gradient(180deg,#091429f5,#0c1830e9);box-shadow:0 9px 30px
 <div class="about"><article class="card reveal"><div class="mini">A SHORT INTRODUCTION</div><p class="quote">“아직 정답은 없지만,<br>궁금한 것은 많습니다.”</p><p>익숙한 것에서 즐거움을 찾고, 낯선 것에서는 새로운 가능성을 발견하려 합니다. 빠른 답보다 오래 생각할 수 있는 질문을 좋아합니다.</p><div class="chips"><span class="chip">#MOONDO8077</span><span class="chip">#새벽감성</span><span class="chip">#게임</span><span class="chip">#AI</span></div></article>
 <article class="card reveal"><div class="mini">A FEW THINGS ABOUT ME</div><div class="list-row"><span class="num">01</span><div><strong>게임을 즐기는 사람</strong><small>전술, 생존, 액션 장르처럼 깊이 탐구할 수 있는 세계를 좋아합니다.</small></div></div><div class="list-row"><span class="num">02</span><div><strong>새로운 기술을 배우는 사람</strong><small>AI와 웹 기술, 인터랙션 등 아이디어를 현실로 구현하는 도구에 관심이 있습니다.</small></div></div><div class="list-row"><span class="num">03</span><div><strong>이야기를 좋아하는 사람</strong><small>게임 속 세계관과 인물의 선택, 철학적인 질문을 깊이 생각하는 편입니다.</small></div></div><div class="list-row"><span class="num">04</span><div><strong>창작을 시도하는 사람</strong><small>영상 편집과 가상 아바타, 디지털 콘텐츠 제작을 하나씩 탐색하고 있습니다.</small></div></div></article></div></div></section>
 <section id="interests"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">02 / Interests</div><h2>내가 좋아하는 것들</h2></div><div class="section-sub">취향은 계속 업데이트되는 중.</div></div>
-<div class="grid"><article class="card reveal"><div class="ico">🎮</div><h3>Games</h3><p>몬스터 헌터, 데스티니 가디언즈, 림버스 컴퍼니, 전술 FPS. 손맛과 세계관이 살아 있는 게임들.</p></article><article class="card reveal"><div class="ico">🪐</div><h3>Stories & Worlds</h3><p>복잡한 설정과 인물의 선택을 따라가며 이야기 너머의 의미를 찾는 것을 좋아합니다.</p></article><article class="card reveal"><div class="ico">🤖</div><h3>AI & Technology</h3><p>생성형 AI, 사람과 컴퓨터의 상호작용, 새로운 디지털 도구를 배우고 활용하는 과정.</p></article><article class="card reveal"><div class="ico">🎬</div><h3>Creative Work</h3><p>영상 편집과 클립 제작, VRChat 아바타 커스터마이징. 생각을 눈에 보이는 결과물로.</p></article><article class="card reveal"><div class="ico">🌌</div><h3>Night Thoughts</h3><p>우주, 의식, 시간, 존재. 명확한 답이 없어도 계속 생각해 보고 싶은 질문들입니다.</p></article><article class="card reveal"><div class="ico">🌅</div><h3>Colors of Dawn</h3><p>푸른 새벽하늘과 따뜻한 노을처럼 차분함과 온기가 함께 느껴지는 색을 좋아합니다.</p></article></div></div></section>
+<div class="grid"><article class="card reveal"><div class="ico">🎮</div><h3>Games</h3><p>몬스터 헌터, 데스티니 가디언즈, 림버스 컴퍼니, 전술 FPS. 손맛과 세계관이 살아 있는 게임들.</p></article><article class="card reveal"><div class="ico">🪐</div><h3>Stories & Worlds</h3><p>복잡한 세계관과 인물의 선택, 그 안에 숨겨진 설정과 복선. 이야기가 품은 의미를 찾아가는 과정.</p></article><article class="card reveal"><div class="ico">🤖</div><h3>AI & Technology</h3><p>생성형 AI, 사람과 컴퓨터의 상호작용, 새로운 디지털 도구를 배우고 활용하는 과정.</p></article><article class="card reveal"><div class="ico">🎬</div><h3>Creative Work</h3><p>영상 편집과 클립 제작, VRChat 아바타 커스터마이징. 생각을 눈에 보이는 결과물로 만드는 작업.</p></article><article class="card reveal"><button type="button" class="ico v25-secret-star" id="v25-secret-star" title="별을 눌러 보세요" aria-label="숨겨진 별 발견하기">🌌<span aria-hidden="true">✦</span></button><h3>Night Thoughts</h3><p>우주의 시작과 끝, 의식과 존재, 삶과 죽음. 쉽게 답할 수 없기에 더 오래 생각하게 되는 질문들.</p></article><article class="card reveal"><div class="ico">🌅</div><h3>Colors of Dawn</h3><p>푸른 새벽하늘과 따뜻한 노을. 차분함과 온기가 함께 느껴지는 색과 풍경.</p></article></div></div></section>
 <section id="journey"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">03 / Journey</div><h2>지금, 그리고 다음</h2></div><div class="section-sub">완성보다 진행 중이라는 사실.</div></div>
 <div class="timeline"><div class="step reveal"><b>NOW / 01</b><div><h3>배우는 중</h3><p>AI 활용과 HCI를 공부하며, 기술이 실제 사람의 경험을 어떻게 바꾸는지 알아가는 중.</p></div></div><div class="step reveal"><b>NEXT / 02</b><div><h3>만들어 보는 중</h3><p>작은 웹 도구, 영상, 아바타처럼 직접 만질 수 있는 결과물을 하나씩 만들어보고 싶어.</p></div></div><div class="step reveal"><b>FUTURE / 03</b><div><h3>나만의 방향 찾기</h3><p>관심과 실력을 연결해 오래 지속할 수 있는 일을 찾는 것. 조급해하지 않고, 그렇다고 멈추지도 않기.</p></div></div></div></div></section>
 <section id="note"><div class="container"><div class="note reveal"><div class="eyebrow">04 / A Note To Myself</div><h2>아직 쓰는 중인 이야기</h2><p>어떤 날은 앞이 선명하고, 어떤 날은 아무것도 보이지 않는다. 그래도 좋아하는 것을 하나씩 알아가고, 어제는 몰랐던 것을 오늘 배우는 일이 쌓이면 언젠가는 나만의 방향이 만들어지겠지.</p><div style="color:#bdd1ed;font-size:13px;margin-top:25px">— MOONDO8077</div></div></div></section>
@@ -476,5 +510,30 @@ const activate=(id)=>tabs.forEach(a=>{const match=a.getAttribute('href')==='#'+i
 const sections=tabs.filter(a=>!['myoya-nav','music-nav','horror-nav'].includes(a.id)).map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
 if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting&&!document.body.classList.contains('myoya-open')&&!document.body.classList.contains('music-open')&&!document.body.classList.contains('horror-open'))activate(e.target.id)}},{rootMargin:'-15% 0px -65% 0px'});sections.forEach(e=>io.observe(e))}
 tabs.forEach(a=>a.addEventListener('click',()=>activate(a.getAttribute('href').slice(1))));
+})();
+</script><dialog id="v25-secret-dialog" class="v25-secret-dialog" aria-labelledby="v25-secret-title"><div class="v25-secret-content"><span class="v25-secret-symbol" aria-hidden="true">✦</span><div class="mini">A SECRET BETWEEN NIGHT & DAWN</div><h3 id="v25-secret-title">밤하늘의 작은 비밀</h3><p>모든 질문에 답이 있는 것은 아닙니다.<br>그래도 질문을 품고 살아가는 동안,<br>우리는 조금씩 다른 풍경을 만나게 됩니다.</p><p>이 별을 발견해 주셔서 감사합니다.</p><button type="button" id="v25-secret-close">별을 다시 놓아주기</button></div></dialog><script>
+(function(){
+const star=document.getElementById('v25-secret-star');const dialog=document.getElementById('v25-secret-dialog');const close=document.getElementById('v25-secret-close');
+if(!star||!dialog)return;
+function show(){if(!dialog.open)dialog.showModal()}
+star.addEventListener('click',show);close.addEventListener('click',()=>dialog.close());
+const code=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let progress=0;
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,[contenteditable="true"]'))return;const key=e.key.length===1?e.key.toLowerCase():e.key;progress=key===code[progress]?progress+1:key===code[0]?1:0;if(progress===code.length){progress=0;show()}});
+})();
+</script><script>
+(function(){
+ const star=document.getElementById('v27-myoya-star');
+ const realm=document.getElementById('v28-secret-realm');
+ const closeBtn=document.getElementById('v28-secret-close');
+ let previousFocus=null;
+ function midnight(){const h=new Date().getHours();return h>=0&&h<4}
+ function close(){realm.hidden=true;realm.setAttribute('aria-hidden','true');document.body.classList.remove('v28-realm-open');if(previousFocus&&previousFocus.isConnected)previousFocus.focus()}
+ function update(){star.hidden=!midnight();if(!midnight()&&!realm.hidden)close()}
+ function open(){if(!midnight())return;previousFocus=document.activeElement;realm.hidden=false;realm.setAttribute('aria-hidden','false');document.body.classList.add('v28-realm-open');closeBtn.focus()}
+ star.addEventListener('click',open);
+ closeBtn.addEventListener('click',close);
+ document.addEventListener('keydown',e=>{if(realm.hidden)return;if(e.key==='Escape'){e.preventDefault();close()}else if(e.key==='Tab'){e.preventDefault();closeBtn.focus()}});
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()});
+ update();setInterval(update,60000);
 })();
 </script></body></html>
