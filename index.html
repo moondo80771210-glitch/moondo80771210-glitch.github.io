@@ -407,8 +407,67 @@ body.v21-rain #v21-weather-overlay,body.v21-snow #v21-weather-overlay,body.v21-c
 .myoya-v50-duration{font-size:11px;color:#6689a0;font-variant-numeric:tabular-nums}
 .myoya-v50-out{font-size:17px;color:#7ea5bc}
 @media(max-width:520px){.myoya-v50-track{gap:7px;padding:8px}.myoya-v50-thumb{flex-basis:43px;height:38px}.myoya-v50-no{min-width:22px}.myoya-v50-tools{flex-wrap:wrap}}
-</style><style id="v52-myoya-thumbnails">.myoya-v50-thumb{overflow:hidden}.myoya-v50-thumb img{width:100%;height:100%;object-fit:cover}.myoya-v52-unverified{opacity:.72}.myoya-v52-unverified .myoya-v50-thumb{background:#e5eaf0;color:#5d6c79}</style></head>
-<body><button type="button" id="v33-mine-tab" aria-label="지뢰찾기 게임 열기" title="지뢰찾기 열기">💣 GAME</button><button id="v27-myoya-star" type="button" hidden aria-label="새벽에 나타난 묘야님의 별" title="새벽에 나타난 별">✧</button><section id="v28-secret-realm" class="v28-secret-realm" aria-label="묘야님을 위한 새벽의 비밀 공간" aria-hidden="true" hidden><div class="v28-realm-inner"><div class="v28-top"><span>✦  THE QUIET HOURS</span><button type="button" id="v28-secret-close" aria-label="비밀 공간 닫기">← 돌아가기</button></div><div class="v28-center"><span class="v28-halo" aria-hidden="true">✧</span><span class="v28-eyebrow">FOR MYOYA</span><h2>고요한 새벽, 작은 별 하나.</h2><p class="v28-lead">오늘도 문득 생각나는 사람이 있습니다.</p><p>그저, 오래도록 기억하고 싶습니다.</p><div class="v28-quote">아무 말 없이 잠시 머물러도 괜찮은 곳.<br>이곳의 작은 별은 묘야님을 기억합니다.</div><div class="v34-audio" id="v34-myoya-audio"><label for="v36-track">묘야님이 듣던 음악</label><select id="v36-track" aria-label="음악 선택"><option value="nSEYgMOcyB8">하얀 나의 오두막집 — 브금대통령</option><option value="_Iuzf93YQo0">In Dream — 브금대통령</option><option value="9wBqKu8W-wI">할아버지의 낡은 시계 오르골 — CEPA MuziKart Rodem</option><option value="e-Xi4nxk7e4">Silent, Christmas Night — 브금대통령</option><option value="XZP4JwZJM5Y">카드캡터체리 OST 피아노 커버 모음 — 요닝히어</option><option value="wNDtM-cE2gs">별아 (star) — kida</option><option value="u6a0o5Qrf8g">블루베리 마카롱 — kida</option><option value="fZmmWsWTh7s">부드러운 분위기를 — cold water free music</option><option value="o_cLAGjofVA">Reminisce — Acacia official</option><option value="8S8YeWztnB0">후르츠바스켓 세레나데 오르골 — 柊 羽音</option><option value="-8aP4tZa12Y">노을의 저편에서 — 브금대통령</option><option value="nzCjD6ZeoVg">찻잔과 도넛이 춤추는 가게 — Sereno</option></select><div class="v36-music-actions"><button type="button" id="v36-prev">◀ 이전</button><button type="button" id="v36-next">다음 ▶</button></div><button type="button" id="v34-myoya-toggle" aria-pressed="false">♫ 음악 재생</button><label>음량 <input id="v34-myoya-volume" type="range" min="0" max="100" value="35" aria-label="묘야님 공간 음악 음량"><output id="v34-myoya-volume-label">35%</output></label><span class="v34-audio-status" id="v34-myoya-status" role="status">음악은 재생 버튼을 누르면 시작되며, 선택한 곡이 반복됩니다.</span><a href="https://www.youtube.com/watch?v=nSEYgMOcyB8" id="v36-myoya-link" target="_blank" rel="noopener noreferrer">YouTube에서 듣기 ↗</a></div><span class="v28-sign">MOONDO8077 · ALWAYS REMEMBERED</span></div><div class="v28-bottom">00:00 — 04:00 · 조용한 새벽에만 열리는 공간</div></div></section><div id="v21-weather-overlay" aria-hidden="true"></div><div class="sky" aria-hidden="true"></div>
+</style><style id="v52-myoya-thumbnails">.myoya-v50-thumb{overflow:hidden}.myoya-v50-thumb img{width:100%;height:100%;object-fit:cover}.myoya-v52-unverified{opacity:.72}.myoya-v52-unverified .myoya-v50-thumb{background:#e5eaf0;color:#5d6c79}</style><style id="v70-mobile-only">
+/* Mobile-only layout; desktop styles and behavior remain unchanged. */
+@media (max-width: 780px) {
+ html,body{max-width:100%;overflow-x:clip}
+ .container{width:calc(100% - 32px);max-width:100%;min-width:0}
+ nav{position:relative;z-index:90}
+ .navinner{width:calc(100% - 28px);padding:13px 0 10px!important}
+ .logo{font-size:20px;letter-spacing:.07em;margin-bottom:9px}
+ .links,.links.open{display:flex!important;position:static!important;flex-flow:row nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none;padding:5px 0 9px!important;gap:6px!important;min-width:0}
+ .links::-webkit-scrollbar{display:none}
+ .links .nav-pill{font-size:11px;min-height:36px;flex-shrink:0}
+ .v45-feature-links{display:flex;flex-wrap:nowrap;gap:7px;overflow-x:auto;max-width:100%;padding:3px 0 6px;scrollbar-width:none}
+ .v45-feature-links::-webkit-scrollbar{display:none}
+ .v45-feature-links .nav-pill{flex:0 0 auto}
+ #music-edge,#myoya-edge,#horror-edge,#v33-mine-tab{display:none!important}
+ .v42-sky-dock{position:relative!important;inset:auto!important;top:auto!important;right:auto!important;left:auto!important;bottom:auto!important;width:calc(100% - 28px)!important;max-width:600px!important;margin:12px auto 0!important;z-index:8!important;border-radius:13px}
+ .v42-sky-toggle{min-height:42px;padding:10px 14px}
+ #v37-test-panel{position:fixed!important;top:auto!important;bottom:74px!important;right:12px!important;left:12px!important;width:auto!important;max-height:55dvh!important}
+ .hero{display:grid!important;grid-template-columns:minmax(0,1fr)!important;padding:38px 0 22px!important;gap:22px!important;min-height:0!important}
+ .hero>div{min-width:0}
+ .hero h1{font-size:clamp(36px,9.2vw,64px)!important;line-height:1.12!important;letter-spacing:-.065em!important;margin:17px 0 22px!important;overflow-wrap:normal}
+ .hero .eyebrow{font-size:10px;letter-spacing:.18em;overflow-wrap:anywhere}
+ .lead{font-size:15px!important;line-height:1.85;overflow-wrap:break-word}
+ .lead br{display:none}
+ .cta{gap:9px;margin-top:24px}
+ .cta .btn{max-width:100%;font-size:13px;padding:12px 13px}
+ .hero-side{width:100%!important;max-width:100%!important;min-width:0!important}
+ .dashboard,.memo-layout{grid-template-columns:minmax(0,1fr)!important}
+ .dash-card{min-width:0!important;overflow:hidden}
+ .v21-mini{position:fixed!important;bottom:max(12px,env(safe-area-inset-bottom))!important;right:12px!important;left:auto!important;max-width:calc(100vw - 24px)!important;z-index:70}
+ .v21-mini:not(:has(#v21-mini-content:not([hidden]))){padding:5px 7px}
+ .v21-mini #v21-mini-content:not([hidden]){max-height:55dvh;overflow-y:auto}
+ .grid,.about,.music-grid,.myoya-grid,.horror-world-grid,.v41-astro{grid-template-columns:minmax(0,1fr)!important}
+ .card,.music-card,.myoya-card,.horror-feature{min-width:0;max-width:100%}
+ iframe,video,img{max-width:100%}
+ .myoya-exhibit-detail,.myoya-exhibition{max-width:100%;min-width:0}
+ main{padding-bottom:68px}
+}
+@media (max-width: 390px){.hero h1{font-size:clamp(34px,9vw,42px)!important}.cta .btn{width:100%}.v42-sky-dock{width:calc(100% - 24px)!important}}
+</style><style id="v71-mobile-sky-fix">
+/* Mobile only: sky control is a compact inline disclosure, never a floating overlay. */
+@media (max-width:780px){
+ #v42-sky-dock.v42-sky-dock{position:relative!important;top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;inset:auto!important;display:block!important;width:calc(100% - 32px)!important;max-width:600px!important;margin:8px auto 0!important;z-index:10!important;transform:none!important;float:none!important;box-sizing:border-box!important;overflow:hidden!important;box-shadow:none!important}
+ #v42-sky-dock .v42-sky-toggle{min-height:38px!important;padding:8px 12px!important;font-size:12px!important}
+ #v42-sky-dock .v42-sky-content{padding:10px!important;min-width:0!important;overflow-wrap:anywhere}
+ #v42-sky-dock .v21-weather-widget{width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important}
+ #v42-sky-dock .v21-weather-widget select{max-width:100%!important}
+ #v37-test-panel{position:fixed!important;inset:auto 12px max(65px,env(safe-area-inset-bottom)) 12px!important;width:auto!important;max-width:none!important;max-height:50dvh!important;overflow:auto!important;z-index:120!important}
+}
+</style><style id="v72-mobile-easter">
+@media(min-width:781px){#v72-secret-launch,#v72-secret-panel{display:none!important}}
+@media(max-width:780px){
+#v72-secret-launch{position:fixed;left:12px;bottom:max(14px,env(safe-area-inset-bottom));z-index:150;width:44px;height:44px;border-radius:50%;border:1px solid #a5c9ed77;background:#10213be8;color:#d5eaff;font-size:23px;box-shadow:0 5px 20px #0007;cursor:pointer}
+#v72-secret-panel{position:fixed;z-index:151;left:12px;bottom:calc(max(14px,env(safe-area-inset-bottom)) + 52px);width:min(300px,calc(100vw - 24px));padding:14px;background:#101d32f5;color:#e4efff;border:1px solid #8fbbe866;border-radius:16px;box-shadow:0 16px 48px #000a}
+#v72-secret-panel[hidden]{display:none!important}
+#v72-secret-panel strong{display:block;font-size:13px;margin-bottom:10px}
+#v72-secret-panel button{width:100%;display:block;text-align:left;margin:6px 0;padding:12px;border-radius:10px;background:#1c3150;border:1px solid #88b7e844;color:#e9f3ff;font-size:13px}
+#v72-secret-panel small{color:#b5c8df;font-size:11px;line-height:1.5;display:block;margin-top:8px}
+}
+</style></head>
+<body><button id="v72-secret-launch" type="button" aria-label="모바일 비밀 별 열기" aria-controls="v72-secret-panel" aria-expanded="false" hidden>✦</button><div id="v72-secret-panel" hidden role="group" aria-label="비밀 별 메뉴"><strong>✦ 밤하늘의 작은 비밀</strong><button type="button" data-target="v25-secret-star">별의 메시지</button><button type="button" data-target="v27-myoya-star">고요한 새벽의 별</button><button type="button" data-target="v33-rest-star">조용한 쉼터</button><button type="button" data-target="v33-mine-tab">작은 지뢰찾기</button><small>새벽의 별은 00:00~04:00에 열려. 다른 시간에는 기존 MYOYA 키보드 미리보기로만 접근할 수 있어.</small></div><button type="button" id="v33-mine-tab" aria-label="지뢰찾기 게임 열기" title="지뢰찾기 열기">💣 GAME</button><button id="v27-myoya-star" type="button" hidden aria-label="새벽에 나타난 묘야님의 별" title="새벽에 나타난 별">✧</button><section id="v28-secret-realm" class="v28-secret-realm" aria-label="묘야님을 위한 새벽의 비밀 공간" aria-hidden="true" hidden><div class="v28-realm-inner"><div class="v28-top"><span>✦  THE QUIET HOURS</span><button type="button" id="v28-secret-close" aria-label="비밀 공간 닫기">← 돌아가기</button></div><div class="v28-center"><span class="v28-halo" aria-hidden="true">✧</span><span class="v28-eyebrow">FOR MYOYA</span><h2>고요한 새벽, 작은 별 하나.</h2><p class="v28-lead">오늘도 문득 생각나는 사람이 있습니다.</p><p>그저, 오래도록 기억하고 싶습니다.</p><div class="v28-quote">아무 말 없이 잠시 머물러도 괜찮은 곳.<br>이곳의 작은 별은 묘야님을 기억합니다.</div><div class="v34-audio" id="v34-myoya-audio"><label for="v36-track">묘야님이 듣던 음악</label><select id="v36-track" aria-label="음악 선택"><option value="nSEYgMOcyB8">하얀 나의 오두막집 — 브금대통령</option><option value="_Iuzf93YQo0">In Dream — 브금대통령</option><option value="9wBqKu8W-wI">할아버지의 낡은 시계 오르골 — CEPA MuziKart Rodem</option><option value="e-Xi4nxk7e4">Silent, Christmas Night — 브금대통령</option><option value="XZP4JwZJM5Y">카드캡터체리 OST 피아노 커버 모음 — 요닝히어</option><option value="wNDtM-cE2gs">별아 (star) — kida</option><option value="u6a0o5Qrf8g">블루베리 마카롱 — kida</option><option value="fZmmWsWTh7s">부드러운 분위기를 — cold water free music</option><option value="o_cLAGjofVA">Reminisce — Acacia official</option><option value="8S8YeWztnB0">후르츠바스켓 세레나데 오르골 — 柊 羽音</option><option value="-8aP4tZa12Y">노을의 저편에서 — 브금대통령</option><option value="nzCjD6ZeoVg">찻잔과 도넛이 춤추는 가게 — Sereno</option></select><div class="v36-music-actions"><button type="button" id="v36-prev">◀ 이전</button><button type="button" id="v36-next">다음 ▶</button></div><button type="button" id="v34-myoya-toggle" aria-pressed="false">♫ 음악 재생</button><label>음량 <input id="v34-myoya-volume" type="range" min="0" max="100" value="35" aria-label="묘야님 공간 음악 음량"><output id="v34-myoya-volume-label">35%</output></label><span class="v34-audio-status" id="v34-myoya-status" role="status">음악은 재생 버튼을 누르면 시작되며, 선택한 곡이 반복됩니다.</span><a href="https://www.youtube.com/watch?v=nSEYgMOcyB8" id="v36-myoya-link" target="_blank" rel="noopener noreferrer">YouTube에서 듣기 ↗</a></div><span class="v28-sign">MOONDO8077 · ALWAYS REMEMBERED</span></div><div class="v28-bottom">00:00 — 04:00 · 조용한 새벽에만 열리는 공간</div></div></section><div id="v21-weather-overlay" aria-hidden="true"></div><div class="sky" aria-hidden="true"></div>
 <nav><div class="container navinner"><a href="#home" class="logo">MOONDO<span>8077</span><span style="color:#ffbb9e">.</span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">☰ 메뉴</button>
 <div class="links" id="navlinks" aria-label="사이트 탐색">
@@ -861,9 +920,9 @@ document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,[con
 })();
 </script><script id="v42-sky-script">(()=>{
  const dock=document.getElementById('v42-sky-dock'),btn=document.getElementById('v42-sky-toggle');if(!dock||!btn)return;
- let collapsed=false;try{collapsed=localStorage.getItem('moondo8077_sky_collapsed')==='yes'}catch(e){}
+ let mobile=window.matchMedia('(max-width:780px)').matches;let collapsed=mobile;try{const saved=localStorage.getItem(mobile?'moondo8077_sky_mobile_collapsed':'moondo8077_sky_collapsed');if(saved!==null)collapsed=saved==='yes'}catch(e){}
  function sync(){dock.classList.toggle('is-collapsed',collapsed);btn.setAttribute('aria-expanded',String(!collapsed));btn.querySelector('span').textContent=collapsed?'▸':'▾';if(collapsed){const panel=document.getElementById('v37-test-panel');if(panel)panel.hidden=true;const test=document.getElementById('v37-test-toggle');if(test)test.setAttribute('aria-expanded','false')}}sync();
- btn.addEventListener('click',()=>{collapsed=!collapsed;try{localStorage.setItem('moondo8077_sky_collapsed',collapsed?'yes':'no')}catch(e){}sync()});
+ btn.addEventListener('click',()=>{collapsed=!collapsed;try{localStorage.setItem(mobile?'moondo8077_sky_mobile_collapsed':'moondo8077_sky_collapsed',collapsed?'yes':'no')}catch(e){}sync()});
  const mini=document.getElementById('v42-mini-moon'),label=document.getElementById('v42-mini-phase');
  function render(){const full=document.getElementById('v41-moon'),phase=document.getElementById('v41-phase');if(!full||!mini||!phase)return;const ctx=mini.getContext('2d');ctx.clearRect(0,0,64,64);ctx.drawImage(full,0,0,64,64);label.textContent='오늘의 달 · '+phase.textContent}
  render();setInterval(render,60000);
@@ -915,4 +974,17 @@ cards.forEach(c=>c.addEventListener('click',()=>{const k=c.dataset.myoyaCategory
 document.getElementById('myoya-exhibit-close').addEventListener('click',close);
 input.addEventListener('input',render);
 })();
-</script></body></html>
+</script><script id="v72-mobile-easter-script">(()=>{
+const launcher=document.getElementById('v72-secret-launch'),panel=document.getElementById('v72-secret-panel');
+const mobile=window.matchMedia('(max-width:780px)');
+function sync(){launcher.hidden=!mobile.matches;if(!mobile.matches){panel.hidden=true;launcher.setAttribute('aria-expanded','false')}}
+function toggle(){panel.hidden=!panel.hidden;launcher.setAttribute('aria-expanded',String(!panel.hidden))}
+launcher.addEventListener('click',toggle);
+panel.querySelectorAll('[data-target]').forEach(button=>button.addEventListener('click',()=>{
+ const id=button.dataset.target;panel.hidden=true;launcher.setAttribute('aria-expanded','false');
+ const target=document.getElementById(id);if(target)target.click();
+}));
+document.addEventListener('pointerdown',e=>{if(!panel.hidden&&!panel.contains(e.target)&&e.target!==launcher){panel.hidden=true;launcher.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){panel.hidden=true;launcher.setAttribute('aria-expanded','false')}});
+mobile.addEventListener('change',sync);sync();
+})();</script></body></html>
